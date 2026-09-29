@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://v3klub.pl/sitemap.xml

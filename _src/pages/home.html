@@ -1,0 +1,220 @@
+<section class="hero">
+  {{hero_tlo}}
+  <div class="wrap hero__uklad">
+    <div class="hero__tresc">
+    <h1 class="h1">Siłownia w Jarosławiu <span class="neon">od 5:00 do północy</span></h1>
+    <p class="lead">V3 Centrum Sportowe przy Poniatowskiego 24. Sala siłowa, Fight Zone z ringiem do boksu, kickboxingu i MMA oraz sala fitness. Parking przy klubie.</p>
+    <p class="hero__dzis" data-dzis-godziny><span class="hero__dzis-dzien">Pn–pt</span> <span class="hero__dzis-godz">{{godz 1}}</span></p>
+    <div class="btn-rzad">
+      <a class="btn btn--neon" href="{{tel_href}}">{{ikona phone}}{{tel}}</a>
+      <a class="btn btn--obrys" href="~/grafik/">{{ikona calendar}}Grafik zajęć</a>
+    </div>
+    </div>
+    {{hero_sale}}
+  </div>
+</section>
+
+<div class="fakty">
+  <div class="wrap">
+    <ul>
+      <li><strong>5:00–0:00</strong><span>od poniedziałku do piątku, w weekend krócej</span></li>
+      <li><strong>Fight Zone</strong><span>boks, kickboxing, MMA, ju-jitsu, krav maga</span></li>
+      <li><strong>Parking</strong><span>plac parkingowy przy budynku</span></li>
+      <li><a href="{{maps}}" rel="noopener" target="_blank"><strong>4,3 w Google</strong><span>60 opinii o klubie</span></a></li>
+    </ul>
+  </div>
+</div>
+
+<section class="sekcja" aria-labelledby="strefy-h">
+  <div class="wrap">
+    <div class="sekcja__naglowek">
+      <h2 class="h2" id="strefy-h">Trzy sale pod jednym adresem</h2>
+      <p>Siłownia, sala sportów walki na piętrze i sala zajęć grupowych. Jeden budynek i jedna recepcja.</p>
+    </div>
+    <div class="strefy">
+      <a class="strefa" href="~/silownia-jaroslaw/">
+        <div class="strefa__foto">{{img name="silownia-strefa-wolnych-ciezarow" alt="Sala siłowni V3 z maszynami na wolne obciążenie i stojakami z talerzami" sizes="(min-width: 900px) 30vw, 100vw"}}</div>
+        <div class="strefa__tresc">
+          <h3 class="h3">Siłownia</h3>
+          <p>Wolne ciężary, racki, maszyny i strefa cardio z bieżniami i rowerami. Sala jest przestronna, więc na sprzęt zwykle nie trzeba czekać.</p>
+          <span class="strzalka">Siłownia w Jarosławiu {{ikona arrow}}</span>
+        </div>
+      </a>
+      <a class="strefa" href="~/kickboxing-jaroslaw/">
+        <div class="strefa__foto">{{img name="fight-zone-sala" alt="Sala Fight Zone z workami bokserskimi i matami w kolorze czerwonym i szarym" sizes="(min-width: 900px) 30vw, 100vw" pos="50% 60%"}}</div>
+        <div class="strefa__tresc">
+          <h3 class="h3">Fight Zone</h3>
+          <p>Sala sportów walki z ringiem, workami i matami. Kickboxing od 4 lat do grupy zawodniczej, boks, MMA, ju-jitsu i samoobrona.</p>
+          <span class="strzalka">Kickboxing i sporty walki {{ikona arrow}}</span>
+        </div>
+      </a>
+      <a class="strefa" href="~/fitness-jaroslaw/">
+        <div class="strefa__foto">{{img name="zajecia-fitness-grupa" alt="Grupa uczestniczek zajęć fitness V3 Klub pod ceglaną ścianą" sizes="(min-width: 900px) 30vw, 100vw"}}</div>
+        <div class="strefa__tresc">
+          <h3 class="h3">Sala fitness</h3>
+          <p>Pilates, joga, zumba, step, aeroboxing oraz zajęcia na zdrowy kręgosłup i gimnastyka korekcyjna.</p>
+          <span class="strzalka">Zajęcia fitness {{ikona arrow}}</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja sekcja--podniesiona" id="fight-zone" aria-labelledby="fz-h">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="sekcja__naglowek">
+          <h2 class="h2" id="fz-h">Sporty walki w&nbsp;Jarosławiu</h2>
+          <p>Fight Zone to osobna sala na piętrze. Wśród trenerów są dyplomowani trenerzy Polskiego Związku Kickboxingu i wielokrotni mistrzowie Polski.</p>
+        </div>
+      </div>
+      <div class="dzis" data-dzis>
+        <div class="dzis__head"><h3 class="h3 dzis__tytul">Zajęcia w Fight Zone</h3><a class="strzalka" href="~/grafik/">Cały grafik {{ikona arrow}}</a></div>
+        <ul class="dzis__lista">
+          <li><span class="dzis__godz">pn, śr</span><a href="~/kickboxing-jaroslaw/">Kickboxing: grupy od 16:00</a></li>
+          <li><span class="dzis__godz">wt, czw</span><a href="~/boks-jaroslaw/">Boks 19:00–20:15</a></li>
+          <li><span class="dzis__godz">pt, sob</span><a href="~/mma-jaroslaw/">MMA</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dyscypliny mt-7">
+      <a class="dyscyplina" href="~/boks-jaroslaw/">
+        <h3 class="h2">Boks</h3>
+        <p class="dyscyplina__kiedy">Wtorek i czwartek, 19:00–20:15</p>
+        <p>Technika, praca nóg i obrona, trening na workach i tarczach. Można zacząć bez doświadczenia.</p>
+        <span class="strzalka">Treningi bokserskie {{ikona arrow}}</span>
+      </a>
+      <a class="dyscyplina" href="~/kickboxing-jaroslaw/">
+        <h3 class="h2">Kickboxing</h3>
+        <p class="dyscyplina__kiedy">Grupy od 4 lat, dorośli pn i śr 20:00</p>
+        <p>Pięć grup wiekowych i Fight Team dla zawodników. Piątkowe sparingi dla grupy zawodniczej.</p>
+        <span class="strzalka">Kickboxing w Jarosławiu {{ikona arrow}}</span>
+      </a>
+      <a class="dyscyplina" href="~/mma-jaroslaw/">
+        <h3 class="h2">MMA</h3>
+        <p class="dyscyplina__kiedy">Piątek 20:00, sobota 12:00</p>
+        <p>Stójka, klincz i parter. Uzupełnisz to bokserskimi, kickboxerskimi i ju-jitsu w tym samym klubie.</p>
+        <span class="strzalka">Treningi MMA {{ikona arrow}}</span>
+      </a>
+    </div>
+
+    <ul class="inne-zajecia" aria-label="Pozostałe zajęcia Fight Zone">
+      <li><strong>SSW Cobra Ju-Jitsu</strong> wt, czw 17:00–19:00</li>
+      <li><strong>Samoobrona / Krav Maga</strong> wt, czw 20:15–21:15</li>
+      <li><strong>Taekwondo</strong></li>
+      <li><strong>Grappling</strong></li>
+      <li><strong>Aikido</strong></li>
+    </ul>
+    <!-- TODO: godziny zajęć taekwondo, grapplingu i aikido (nie ma ich na grafiku Fight Zone od 1.09.2026) -->
+
+    <div class="info-box mt-6" id="pierwszy-trening">
+      <p><strong>Pierwszy raz na sportach walki?</strong> W każdy piątek o 17:30 jest trening wprowadzający dla nowych osób. Przyjdź w stroju sportowym, z wodą i ręcznikiem, resztę pokaże trener.</p>
+    </div>
+  </div>
+</section>
+{{dane_grafik}}
+
+<section class="sekcja" aria-labelledby="obiekt-h">
+  <div class="wrap">
+    <div class="sekcja__naglowek">
+      <h2 class="h2" id="obiekt-h">Szatnie, prysznice, parking</h2>
+      <p>Rzeczy, o które pyta się przed zakupem karnetu. Tak wygląda klub od wejścia do szatni.</p>
+    </div>
+    <div class="galeria">
+      <figure class="szeroki">{{img name="recepcja-sklepik" alt="Recepcja V3 Klub z ladą, lodówkami z napojami i regałem z przekąskami" sizes="(min-width: 900px) 50vw, 100vw"}}<figcaption>Recepcja ze sklepikiem: napoje i produkty na przed i po treningu</figcaption></figure>
+      <figure>{{img name="szatnia-czerwone-szafki" alt="Szatnia z czerwonymi szafkami, ławkami i wieszakami" sizes="(min-width: 900px) 24vw, 50vw"}}<figcaption>Szatnia</figcaption></figure>
+      <figure>{{img name="prysznice" alt="Korytarz z kabinami prysznicowymi w szatni" sizes="(min-width: 900px) 24vw, 50vw"}}<figcaption>Prysznice</figcaption></figure>
+      <figure>{{img name="strefa-relaksu" alt="Strefa wypoczynku z zieloną sofą i ścianą z roślin" sizes="(min-width: 900px) 24vw, 50vw"}}<figcaption>Strefa odpoczynku</figcaption></figure>
+      <figure>{{img name="szatnia-szafki-2" alt="Rząd jasnych szafek na ubrania w szatni" sizes="(min-width: 900px) 24vw, 50vw"}}<figcaption>Szafki na ubrania</figcaption></figure>
+      <figure>{{img name="budynek-poniatowskiego-24" alt="Budynek V3 Centrum Sportowe przy ulicy Poniatowskiego 24 w Jarosławiu" sizes="(min-width: 900px) 24vw, 50vw"}}<figcaption>Poniatowskiego 24</figcaption></figure>
+      <figure>{{img name="parking" alt="Plac parkingowy z wyznaczonymi miejscami przy budynku klubu" sizes="(min-width: 900px) 24vw, 50vw"}}<figcaption>Parking przy klubie</figcaption></figure>
+      <figure>{{img name="lazienka-umywalki" alt="Łazienka przy szatni z dwiema umywalkami i lustrem" sizes="(min-width: 900px) 24vw, 50vw"}}<figcaption>Łazienka przy szatni</figcaption></figure>
+      <figure>{{img name="prysznice-szatnia" alt="Prysznice i umywalki w drugiej szatni" sizes="(min-width: 900px) 24vw, 50vw"}}<figcaption>Druga szatnia z prysznicami</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja sekcja--podniesiona" aria-labelledby="wideo-h">
+  <div class="wrap">
+    <div class="sekcja__naglowek">
+      <h2 class="h2" id="wideo-h">Zobacz sale na nagraniach</h2>
+      <p>Krótkie nagrania z treningów, żebyś wiedział, na co się piszesz, zanim przyjdziesz pierwszy raz.</p>
+    </div>
+    <div class="wideo-siatka wideo-siatka--4">
+      {{wideo key="silownia" src="~/assets/video/silownia-poniedzialek.mp4" poster="wideo-silownia-poniedzialek" tytul="Siłownia" opis="Poniedziałek w V3: siłownia, cardio i sale"}}
+      {{wideo key="boks" src="~/assets/video/boks-trening.mp4" poster="wideo-boks-trening" tytul="Boks" opis="Trening na tarczach i skakance"}}
+      {{wideo key="kickboxing" src="~/assets/video/kickboxing-zaawansowani.mp4" poster="wideo-kickboxing-zaawansowani" tytul="Kickboxing" opis="Grupa zaawansowana w Fight Zone"}}
+      {{wideo key="fitness" src="~/assets/video/fitness-tabata.mp4" poster="wideo-fitness-tabata" tytul="Fitness" opis="Tabata na sali fitness"}}
+    </div>
+  </div>
+</section>
+
+<section class="sekcja" aria-labelledby="trenerzy-h">
+  <div class="wrap">
+    <div>
+      <div class="sekcja__naglowek mb-0">
+        <h2 class="h2" id="trenerzy-h">Trenerzy</h2>
+        <p>Trener II klasy i sędzia Polskiego Związku Kickboxingu, nauczyciele wychowania fizycznego, instruktorka taekwondo z medalem mistrzostw Polski, zawodowy zawodnik MMA.</p>
+        <a class="strzalka mt-5" href="~/trenerzy/">Poznaj trenerów {{ikona arrow}}</a>
+      </div>
+    </div>
+    <div class="trenerzy-pasek mt-6">
+      <a href="~/trenerzy/#jacek">{{img name="trenerzy/jacek" alt="Trener Jacek w rękawicach bokserskich" sizes="(min-width: 900px) 16vw, 33vw"}}<span>Jacek</span></a>
+      <a href="~/trenerzy/#ireneusz">{{img name="trenerzy/ireneusz" alt="Trener Ireneusz jako sędzia na gali kickboxingu" sizes="(min-width: 900px) 16vw, 33vw"}}<span>Ireneusz</span></a>
+      <a href="~/trenerzy/#damian">{{img name="trenerzy/damian" alt="Instruktor Damian w gardzie" sizes="(min-width: 900px) 16vw, 33vw"}}<span>Damian</span></a>
+      <a href="~/trenerzy/#marcin">{{img name="trenerzy/marcin" alt="Instruktor Marcin" sizes="(min-width: 900px) 16vw, 33vw"}}<span>Marcin</span></a>
+      <a href="~/trenerzy/#julia">{{img name="trenerzy/julia" alt="Instruktorka Julia w dobboku z czerwonym pasem" sizes="(min-width: 900px) 16vw, 33vw"}}<span>Julia</span></a>
+      <a href="~/trenerzy/#dawid">{{img name="trenerzy/dawid" alt="Instruktor Dawid" sizes="(min-width: 900px) 16vw, 33vw"}}<span>Dawid</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja sekcja--beton" aria-labelledby="opinie-h">
+  <div class="wrap">
+    <div class="sekcja__naglowek">
+      <h2 class="h2" id="opinie-h">Co piszą bywalcy</h2>
+    </div>
+    <div class="ocena">
+      <span class="ocena__liczba">4,3</span>
+      <span class="ocena__opis">średnia z 60 opinii w Google<br><a class="link" href="{{maps}}" rel="noopener" target="_blank">Przeczytaj wszystkie opinie</a></span>
+    </div>
+    <div class="opinie opinie--3">
+      <figure class="opinia"><blockquote><p>Nie trzeba czekać w kolejce na użycie maszyny, jest przemiła obsługa, zawsze jest czysto, a opcja samoobsługi nie raz uratowała mój trening.</p></blockquote><figcaption><strong>Iza</strong> · opinia z Google</figcaption></figure>
+      <figure class="opinia"><blockquote><p>Syn uczęszcza na treningi boksu do pana Jacka, jest bardzo zadowolony. Profesjonalny trener, świetne podejście do dzieci i młodzieży.</p></blockquote><figcaption><strong>Paulina</strong> · opinia z Google</figcaption></figure>
+      <figure class="opinia"><blockquote><p>Świetna siłka i sala fitness. Gorąco polecam trenerkę Zuzię i jej pilates.</p></blockquote><figcaption><strong>Katarzyna</strong> · opinia z Google</figcaption></figure>
+      <figure class="opinia"><blockquote><p>Super atmosfera, pełen profesjonalizm, przede wszystkim nie ma tłoku, bardzo czysto i zadbany, sprawny sprzęt.</p></blockquote><figcaption><strong>Pan Gadulsky</strong> · opinia z Google</figcaption></figure>
+      <figure class="opinia"><blockquote><p>Czysto i ciężary na swoim miejscu, nie trzeba szukać po całej siłowni. Muzyka w tle nie ogłusza.</p></blockquote><figcaption><strong>Joanna</strong> · opinia z Google</figcaption></figure>
+      <figure class="opinia"><blockquote><p>Polecam spróbować zajęć z kickboxingu, które odmieniają sylwetkę i kształtują charakter.</p></blockquote><figcaption><strong>Monika</strong> · opinia z Google</figcaption></figure>
+    </div>
+    <p class="przypis mt-5">Fragmenty opinii z profilu V3 Centrum Sportowe w Mapach Google, skrócone.</p>
+    <!-- TODO: potwierdzić z klubem zgodę na cytowanie fragmentów opinii z Google na stronie -->
+  </div>
+</section>
+
+<section class="sekcja" aria-labelledby="faq-h">
+  <div class="wrap wrap--waski">
+    <h2 class="h2" id="faq-h">Pytania przed pierwszą wizytą</h2>
+    <div class="mt-6">
+{{faq}}
+? W jakich godzinach jest otwarta siłownia?
+Od poniedziałku do piątku od 5:00 do północy, w sobotę od 6:00 do 23:00, w niedzielę od 8:00 do 22:00. Pełne godziny są na stronie <a href="~/kontakt/">kontakt</a>.
+
+? Czy przy klubie jest parking?
+Tak. Przy budynku przy Poniatowskiego 24 jest plac parkingowy z wyznaczonymi miejscami.
+
+? Mogę przyjść na jeden trening bez karnetu?
+Tak, jest wejście jednorazowe. Aktualne ceny karnetów i wejść znajdziesz w <a href="~/cennik/">cenniku</a>.
+
+? Od ilu lat dziecko może trenować w V3?
+Najmłodsza grupa to Kickboxing Kids dla dzieci od 4 do 6 lat, w poniedziałki i środy o 16:00. Starsze dzieci trenują w grupach 7–10, 10–13 i 14–18 lat. Szczegóły na stronie <a href="~/kickboxing-jaroslaw/">kickboxingu</a>.
+
+? Nigdy nie trenowałem sportów walki. Od czego zacząć?
+Od piątkowego treningu wprowadzającego o 17:30. To zajęcia dla nowych osób, więc nikt nie oczekuje, że cokolwiek już umiesz.
+{{/faq}}
+    </div>
+  </div>
+</section>
+
+{{cta tytul="Siłownia i sporty walki przy Poniatowskiego 24"}}

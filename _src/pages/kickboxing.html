@@ -1,0 +1,181 @@
+<section class="page-hero">
+  <div class="wrap">
+    {{crumbs}}
+    <div class="page-hero__grid">
+      <div>
+        <h1 class="h1">Kickboxing w Jarosławiu <span class="neon neon--zaplon">dla dzieci i dorosłych</span></h1>
+        <p class="lead">Kickboxing to najwięcej godzin w grafiku Fight Zone: pięć grup wiekowych, grupa dorosłych i Fight Team z piątkowymi sparingami. Trenerzy mają uprawnienia Polskiego Związku Kickboxingu i wychowali mistrzów Polski, Europy i świata.</p>
+        <ul class="kluczowe">
+          <li>{{ikona users}}<span>Grupy: 4–6, 7–10, 10–13, 14–18 lat, dorośli i zawodnicy</span></li>
+          <li>{{ikona clock}}<span>Poniedziałek i środa od 16:00, wtorek i czwartek od 16:00 (kadeci)</span></li>
+          <li>{{ikona pin}}<span>Fight Zone na piętrze, {{ulica}}, {{miasto}}</span></li>
+        </ul>
+        <div class="btn-rzad">
+          <a class="btn btn--neon" href="{{tel_href}}">{{ikona phone}}Zapisz się: {{tel}}</a>
+          <a class="btn btn--obrys" href="#grupy">Zobacz grupy</a>
+        </div>
+      </div>
+      <div class="page-hero__foto ramka">
+        {{img name="fight-zone-sala" alt="Sala kickboxingu Fight Zone z workami treningowymi i matami" sizes="(min-width: 900px) 40vw, 100vw" eager pos="50% 60%"}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja" id="grupy" aria-labelledby="grupy-h">
+  <div class="wrap">
+    <div class="sekcja__naglowek">
+      <h2 class="h2" id="grupy-h">Grupy kickboxingu</h2>
+      <p>Dzieci trenują z rówieśnikami, a nie z nastolatkami. Grupy są dobrane tak, żeby czas i intensywność zajęć pasowały do wieku.</p>
+    </div>
+    <div class="grupy">
+      <article class="grupa">
+        <h3 class="grupa__wiek">4–6 lat</h3>
+        <p class="grupa__kiedy">Kickboxing Kids · pn, śr 16:00–16:45</p>
+        <p>Najkrótsze zajęcia, 45 minut. Dużo ruchu, koordynacji i nauki słuchania trenera, pierwsze proste techniki.</p>
+      </article>
+      <article class="grupa">
+        <h3 class="grupa__wiek">7–10 lat</h3>
+        <p class="grupa__kiedy">Kickboxing Start · pn, śr 17:00–17:45</p>
+        <p>Grupa dla dzieci, które zaczynają albo przechodzą z Kids. Podstawy ciosów, kopnięć i poruszania się.</p>
+      </article>
+      <article class="grupa">
+        <h3 class="grupa__wiek">10–13 lat</h3>
+        <p class="grupa__kiedy">Kickboxing Kadet · wt, czw 16:00–17:00</p>
+        <p>Godzinny trening we wtorki i czwartki, w inne dni niż młodsze grupy. Więcej techniki i łączenia ciosów z kopnięciami.</p>
+      </article>
+      <article class="grupa">
+        <h3 class="grupa__wiek">14–18 lat</h3>
+        <p class="grupa__kiedy">Kickboxing Junior · pn, śr 17:45–18:45</p>
+        <p>Młodzież szkolna. Pełna technika kickboxingu, trening kondycyjny i praca w parach.</p>
+      </article>
+      <article class="grupa">
+        <h3 class="grupa__wiek">Dorośli</h3>
+        <p class="grupa__kiedy">pn, śr 20:00–21:15</p>
+        <p>Dla osób, które chcą się ruszać, zrzucić stres i nauczyć się techniki. Starty w zawodach nie są wymagane.</p>
+      </article>
+      <article class="grupa grupa--zaw">
+        <h3 class="grupa__wiek">Fight Team</h3>
+        <p class="grupa__kiedy">pn, śr 18:45–20:00 · pt 18:30–20:00 sparingi</p>
+        <p>Grupa zawodnicza. Trzy treningi w tygodniu, w piątek sparingi. Dla osób, które startują albo chcą startować.</p>
+      </article>
+    </div>
+    <!-- TODO: poprosić trenerów o potwierdzenie krótkich opisów grup (co robi się na zajęciach w danym wieku) -->
+    <p class="przypis">Grafik Fight Zone obowiązuje od {{grafik_od}}. Pełny tydzień w <a class="link" href="~/grafik/">grafiku zajęć</a>.</p>
+    <!-- TODO: potwierdzić z trenerem zasady przyjęcia do Fight Teamu (np. po uzgodnieniu z trenerem, od jakiego wieku) -->
+  </div>
+</section>
+
+<section class="sekcja sekcja--podniesiona" aria-labelledby="trenerzy-k-h">
+  <div class="wrap">
+    <div class="sekcja__naglowek">
+      <h2 class="h2" id="trenerzy-k-h">Trenerzy kickboxingu</h2>
+      <p>Dwóch dyplomowanych trenerów II klasy Polskiego Związku Kickboxingu, dwóch sędziów PZKB, a przy najmłodszych instruktorka, która sama startuje.</p>
+    </div>
+    <div class="trenerzy-mini">
+      <a class="trener-mini" href="~/trenerzy/#jacek">{{img name="trenerzy/jacek" alt="Trener Jacek" sizes="88px"}}<div><strong>Jacek</strong><span>Trener II klasy PZKB, wielokrotny mistrz Polski w kickboxingu i karate all style. Wychował wielu mistrzów Polski, Europy i świata.</span></div></a>
+      <a class="trener-mini" href="~/trenerzy/#ireneusz">{{img name="trenerzy/ireneusz" alt="Trener Ireneusz" sizes="88px"}}<div><strong>Ireneusz</strong><span>Trener II klasy PZKB, sędzia klasy B, wielokrotny mistrz Polski. Wychował wiele pokoleń mistrzów Polski.</span></div></a>
+      <a class="trener-mini" href="~/trenerzy/#marcin">{{img name="trenerzy/marcin" alt="Instruktor Marcin" sizes="88px"}}<div><strong>Marcin</strong><span>Instruktor kickboxingu, wielokrotny medalista pucharów i mistrzostw Polski, nauczyciel WF.</span></div></a>
+      <a class="trener-mini" href="~/trenerzy/#damian">{{img name="trenerzy/damian" alt="Instruktor Damian" sizes="88px"}}<div><strong>Damian</strong><span>Instruktor kickboxingu i licencjonowany sędzia PZKB. W sporcie od 18 lat.</span></div></a>
+      <a class="trener-mini" href="~/trenerzy/#julia">{{img name="trenerzy/julia" alt="Instruktorka Julia" sizes="88px"}}<div><strong>Julia</strong><span>Prowadzi kickboxing dla dzieci 4–6 lat. Startuje w taekwondo i kickboxingu, medalistka mistrzostw Polski.</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja" aria-labelledby="dorosli-h">
+  <div class="wrap">
+    <div class="split split--srodek">
+      <div class="prose">
+        <h2 class="h2" id="dorosli-h">Kickboxing dla dorosłych</h2>
+        <p class="mt-5">Grupa dorosłych trenuje w poniedziałki i środy o 20:00, kiedy większość osób ma już za sobą pracę. Trening trwa 75 minut.</p>
+        <p>Uczysz się ciosów i kopnięć na workach i tarczach, pracujesz w parach i robisz sporo kondycji. Jedna z opinii o klubie mówi wprost, że te zajęcia odmieniają sylwetkę i kształtują charakter.</p>
+        <p>Jeśli zaczynasz od zera, przyjdź najpierw na <a href="~/grafik/#trening-wprowadzajacy">trening wprowadzający w piątek o 17:30</a>. Jeśli trenowałeś wcześniej i chcesz sparingów, porozmawiaj z trenerem o Fight Teamie.</p>
+      </div>
+      <div class="wideo-para wideo-para--3">
+        {{wideo key="kickboxing" src="~/assets/video/kickboxing-trening.mp4" poster="wideo-kickboxing-trening" tytul="Trening grupy" opis="Sala Fight Zone"}}
+        {{wideo key="kickboxing-sroda-marcin" src="~/assets/video/kickboxing-sroda-marcin.mp4" poster="wideo-kickboxing-sroda-marcin" tytul="Trening z Marcinem" opis="Grupa dorosłych"}}
+        {{wideo key="kickboxing-sparing" src="~/assets/video/kickboxing-sparing.mp4" poster="wideo-kickboxing-sparing" tytul="Sparingi" opis="Fight Team w ringu"}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja sekcja--beton" aria-labelledby="rodzice-h">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <h2 class="h2" id="rodzice-h">Dla rodziców</h2>
+        <p class="lead mt-5">Najczęstsze pytania o zapisanie dziecka na kickboxing w Jarosławiu.</p>
+        <div class="wideo-para mt-6">
+          {{wideo key="kickboxing-dzieci" src="~/assets/video/kickboxing-dzieci.mp4" poster="wideo-kickboxing-dzieci" tytul="Kids 4–6 lat" opis="Zabawa ruchowa i pierwsze elementy kickboxingu"}}
+        </div>
+      </div>
+      <div class="prose">
+        <h3 class="h3">Do której grupy zapisać dziecko?</h3>
+        <p>Decyduje wiek: 4–6 lat to Kids, 7–10 Start, 10–13 Kadet, 14–18 Junior. Dziesięciolatek pasuje do Start i do Kadet, więc przed pierwszymi zajęciami zapytaj trenera, która grupa będzie lepsza.</p>
+        <h3 class="h3">Czy dziecko musi być wysportowane?</h3>
+        <p>Nie. Zajęcia dla najmłodszych to w dużej mierze ogólny rozwój ruchowy, a technika przychodzi z czasem.</p>
+        <h3 class="h3">Czy dzieci biorą udział w zawodach?</h3>
+        <p>Chętni mogą, ale nie muszą. Starty to domena Fight Teamu. <span class="todo">do uzupełnienia: w jakich zawodach startują zawodnicy klubu i od jakiego wieku</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja" aria-labelledby="grafik-k-h">
+  <div class="wrap">
+    <h2 class="h2" id="grafik-k-h">Grafik kickboxingu</h2>
+    <div class="mt-6">{{grafik_tabela d="kickboxing"}}</div>
+  </div>
+</section>
+
+<section class="sekcja sekcja--beton" aria-labelledby="opinie-k-h">
+  <div class="wrap">
+    <h2 class="h2" id="opinie-k-h">O kickboxingu w V3</h2>
+    <div class="opinie mt-6">
+      <figure class="opinia"><blockquote><p>Moja córka 4 lata trenuje pod okiem pana Jacka. Ani ja, ani ona nie mamy żadnych uwag do metod, jakie stosuje. Treningi są na wysokim poziomie.</p></blockquote><figcaption><strong>Agnieszka</strong> · opinia z Google</figcaption></figure>
+      <figure class="opinia"><blockquote><p>Szczególnie polecam spróbować zajęć z kickboxingu, które odmieniają sylwetkę i kształtują charakter.</p></blockquote><figcaption><strong>Monika</strong> · opinia z Google</figcaption></figure>
+      <figure class="opinia"><blockquote><p>Szczerze polecam tę siłownię, a szczególnie strefę Fight Zone i zajęcia z trenerem Jackiem, który zawsze zaraża pozytywną energią, tłumaczy każdy krok…</p></blockquote><figcaption><strong>Wika</strong> · opinia z Google</figcaption></figure>
+      <figure class="opinia"><blockquote><p>Trenuję z nimi 10 lat. Atmosfera jest wyjątkowa, a podejście do ludzi pełne szacunku.</p></blockquote><figcaption><strong>Paulina</strong> · opinia z Google</figcaption></figure>
+    </div>
+    <p class="przypis mt-5">Fragmenty opinii z Map Google, skrócone.</p>
+  </div>
+</section>
+
+<section class="sekcja" aria-labelledby="faq-k-h">
+  <div class="wrap wrap--waski">
+    <h2 class="h2" id="faq-k-h">Kickboxing: pytania</h2>
+    <div class="mt-6">
+{{faq}}
+? Od ilu lat można trenować kickboxing w Jarosławiu?
+W V3 Klub od 4 lat. Grupa Kickboxing Kids dla dzieci 4–6 lat trenuje w poniedziałki i środy od 16:00 do 16:45.
+
+? Ile trwa trening kickboxingu?
+Grupy Kids i Start trenują 45 minut, Kadet i Junior godzinę, a dorośli i Fight Team 75 minut.
+
+? Czy na kickboxingu trzeba walczyć?
+Nie musisz. Sparingi to osobny piątkowy trening Fight Teamu, czyli grupy zawodniczej.
+
+? Czy dorosły bez doświadczenia może zacząć kickboxing?
+Tak. Najlepiej przyjść na piątkowy trening wprowadzający o 17:30, a potem do grupy dorosłych w poniedziałek lub środę o 20:00.
+
+? Ile kosztuje kickboxing?
+Ceny karnetów dla dzieci i dorosłych są w <a href="~/cennik/">cenniku</a>.
+{{/faq}}
+    </div>
+  </div>
+</section>
+
+<section class="sekcja sekcja--podniesiona" aria-labelledby="dalej-k-h">
+  <div class="wrap">
+    <h2 class="h2" id="dalej-k-h">Sprawdź też</h2>
+    <nav class="powiazane powiazane--4 mt-6" aria-labelledby="dalej-k-h">
+      <a href="~/boks-jaroslaw/"><strong>Boks</strong><span>Wtorek i czwartek 19:00</span></a>
+      <a href="~/mma-jaroslaw/"><strong>MMA</strong><span>Piątek 20:00, sobota 12:00</span></a>
+      <a href="~/fitness-jaroslaw/#aeroboxing"><strong>Aeroboxing</strong><span>Ruchy z kickboxingu w formie fitnessu</span></a>
+      <a href="~/trenerzy/"><strong>Trenerzy</strong><span>Pełne profile trenerów kickboxingu</span></a>
+    </nav>
+  </div>
+</section>
+
+{{cta tytul="Zapisz dziecko albo siebie" tekst="Zadzwoń i powiedz, ile lat ma zawodnik. Podpowiemy grupę i termin pierwszego treningu."}}

@@ -1,0 +1,89 @@
+<section class="page-hero page-hero--bez-foto">
+  <div class="wrap">
+    {{crumbs}}
+    <div class="page-hero__grid">
+      <div>
+        <h1 class="h1">Kontakt <span class="neon neon--zaplon">i dojazd</span></h1>
+        <p class="lead">{{nazwa}} ({{marka}}) w Jarosławiu. Zadzwoń, napisz na TikToku albo po prostu przyjdź do recepcji w godzinach otwarcia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja" aria-labelledby="dane-h">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <h2 class="sr-only" id="dane-h">Dane kontaktowe</h2>
+        <address class="nap">
+          <div class="nap__rzad">{{ikona pin}}<div><strong>Adres</strong><span class="nap__duzy">{{nazwa}}</span><br>{{ulica}}<br>{{kod}} {{miasto}}</div></div>
+          <div class="nap__rzad">{{ikona phone}}<div><strong>Telefon</strong><a class="nap__duzy" href="{{tel_href}}">{{tel}}</a></div></div>
+          <div class="nap__rzad">{{ikona phone-app}}<div><strong>Aplikacja klubu</strong><a href="{{apka}}" rel="noopener" target="_blank">v3klub.gymmanager.io</a></div></div>
+        </address>
+        <!-- TODO: adres e-mail klubu (jeśli jest, dodać wiersz z mailto:) -->
+        <div class="btn-rzad mt-6">
+          <a class="btn btn--neon" href="{{tel_href}}">{{ikona phone}}Zadzwoń</a>
+          <a class="btn btn--obrys" href="{{maps_trasa}}" rel="noopener" target="_blank">{{ikona nav}}Wyznacz trasę</a>
+        </div>
+
+        <h2 class="h3 mt-7" id="godziny">Godziny otwarcia</h2>
+        <div class="mt-5">{{godziny}}</div>
+        <p class="przypis">Zajęcia w Fight Zone i na sali fitness odbywają się według <a class="link" href="~/grafik/">grafiku</a>.</p>
+
+        <h2 class="h3 mt-7">Social media</h2>
+        <ul class="social mt-5">
+          <li><a href="{{tiktok}}" rel="noopener" target="_blank">{{ikona tiktok}}TikTok @v3_klub_jaroslaw</a></li>
+          <!-- TODO: Facebook i Instagram: uzupełnić FACEBOOK / INSTAGRAM w _build.py i dodać tu linki -->
+        </ul>
+      </div>
+      <div class="mapa">
+        {{img name="budynek-poniatowskiego-24" alt="Budynek V3 Centrum Sportowe przy ulicy Poniatowskiego 24 w Jarosławiu" sizes="(min-width: 900px) 45vw, 100vw"}}
+        <div class="mapa__zgoda">
+          <p>Mapa Google ładuje się dopiero po kliknięciu, bo wtedy Google zapisuje pliki cookie.</p>
+          <div class="btn-rzad btn-rzad--srodek">
+            <button class="btn btn--neon" type="button" data-mapa="{{maps_embed}}">{{ikona pin}}Pokaż mapę</button>
+            <a class="btn btn--obrys" href="{{maps}}" rel="noopener" target="_blank">Otwórz w Mapach Google</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja sekcja--podniesiona" aria-labelledby="dojazd-h">
+  <div class="wrap">
+    <div class="split split--srodek">
+      <div class="prose">
+        <h2 class="h2" id="dojazd-h">Jak do nas trafić</h2>
+        <p class="mt-5">Klub jest w budynku przy ulicy Poniatowskiego 24 w Jarosławiu, z szyldem Centrum Sportowe V3 nad wejściem. Do wejścia prowadzą schody.</p>
+        <p>Samochód zostawisz na placu parkingowym przy budynku.</p>
+        <!-- TODO: opisać wjazd na parking (od której ulicy), liczbę miejsc i najbliższy przystanek komunikacji -->
+      </div>
+      <div class="galeria galeria--2">
+        <figure>{{img name="parking" alt="Parking przy budynku klubu V3 z wyznaczonymi miejscami" sizes="(min-width: 900px) 22vw, 50vw"}}<figcaption>Parking</figcaption></figure>
+        <figure>{{img name="parking-2" alt="Tylna ściana budynku klubu i miejsca parkingowe" sizes="(min-width: 900px) 22vw, 50vw"}}<figcaption>Plac przy budynku</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja" aria-labelledby="faq-k2-h">
+  <div class="wrap wrap--waski">
+    <h2 class="h2" id="faq-k2-h">Kontakt: pytania</h2>
+    <div class="mt-6">
+{{faq}}
+? Gdzie jest siłownia V3 w Jarosławiu?
+Przy ulicy Poniatowskiego 24, 37-500 Jarosław. Pełna nazwa w Mapach Google to V3 Centrum Sportowe.
+
+? Jaki jest numer telefonu do V3 Klub?
+788 463 717. Pod tym numerem zapiszesz się na zajęcia i zapytasz o karnety.
+
+? Czy jest parking przy klubie?
+Tak, przy budynku jest plac parkingowy z wyznaczonymi miejscami.
+
+? W jakich godzinach jest otwarty klub?
+Od poniedziałku do piątku od 5:00 do północy, w sobotę od 6:00 do 23:00, w niedzielę od 8:00 do 22:00.
+{{/faq}}
+    </div>
+  </div>
+</section>

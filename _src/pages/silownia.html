@@ -1,0 +1,185 @@
+<section class="page-hero">
+  <div class="wrap">
+    {{crumbs}}
+    <div class="page-hero__grid">
+      <div>
+        <h1 class="h1">Siłownia w Jarosławiu <span class="neon neon--zaplon">przy Poniatowskiego 24</span></h1>
+        <p class="lead">Duża sala z wolnymi ciężarami, rackami, maszynami i rzędem bieżni. Otwieramy o 5:00, zamykamy o północy, więc trening zmieścisz przed pracą albo po drugiej zmianie.</p>
+        <ul class="kluczowe">
+          <li>{{ikona clock}}<span>pn–pt {{godz 1}} · sob {{godz 6}} · nd {{godz 7}}</span></li>
+          <li>{{ikona pin}}<span>{{ulica}}, {{kod}} {{miasto}}</span></li>
+          <li>{{ikona parking}}<span>Parking przy budynku, szatnie z prysznicami</span></li>
+        </ul>
+        <div class="btn-rzad">
+          <a class="btn btn--neon" href="{{tel_href}}">{{ikona phone}}{{tel}}</a>
+          <a class="btn btn--obrys" href="~/cennik/">Cennik karnetów</a>
+        </div>
+      </div>
+      <div class="page-hero__foto ramka">
+        {{img name="maszyny-silownia" alt="Maszyny siłowe i suwnica Smitha na sali siłowni V3 w Jarosławiu" sizes="(min-width: 900px) 40vw, 100vw" eager pos="50% 60%"}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja" aria-labelledby="sprzet-h">
+  <div class="wrap">
+    <div class="sekcja__naglowek">
+      <h2 class="h2" id="sprzet-h">Co jest na sali</h2>
+      <p>Siłownia jest podzielona na strefy, więc osoba robiąca martwy ciąg nie stoi nad kimś na bieżni. Porządek i czystość na sali to coś, co w opiniach wraca regularnie.</p>
+    </div>
+    <div class="strefy--4">
+      <article class="strefa strefa--statyczna">
+        <div class="strefa__foto">{{img name="hantle-talerze" alt="Stojaki z hantlami i talerzami obciążeniowymi" sizes="(min-width: 1100px) 24vw, (min-width: 700px) 50vw, 100vw"}}</div>
+        <div class="strefa__tresc">
+          <h3 class="h3">Wolne ciężary</h3>
+          <p>Hantle, talerze, sztangi, kettlebells i ławki do ćwiczeń z wolnym obciążeniem.</p>
+        </div>
+      </article>
+      <article class="strefa strefa--statyczna">
+        <div class="strefa__foto">{{img name="strefa-rackow" alt="Sala z rackami, ławkami i sztangami pod zielonymi ścianami" sizes="(min-width: 1100px) 24vw, (min-width: 700px) 50vw, 100vw"}}</div>
+        <div class="strefa__tresc">
+          <h3 class="h3">Racki i ławki</h3>
+          <p>Osobna sala z klatkami do przysiadów i wyciskania oraz ławkami regulowanymi.</p>
+        </div>
+      </article>
+      <article class="strefa strefa--statyczna">
+        <div class="strefa__foto">{{img name="silownia-strefa-wolnych-ciezarow" alt="Maszyny na wolne obciążenie ustawione w rzędzie na sali siłowni" sizes="(min-width: 1100px) 24vw, (min-width: 700px) 50vw, 100vw"}}</div>
+        <div class="strefa__tresc">
+          <h3 class="h3">Maszyny</h3>
+          <p>Maszyny na wolne obciążenie, suwnica Smitha i wyciągi. Dobre na start i na dokładny trening izolowany.</p>
+        </div>
+      </article>
+      <article class="strefa strefa--statyczna">
+        <div class="strefa__foto">{{img name="bieznie-cardio" alt="Rząd bieżni i maszyn cardio na drewnianej podłodze" sizes="(min-width: 1100px) 24vw, (min-width: 700px) 50vw, 100vw"}}</div>
+        <div class="strefa__tresc">
+          <h3 class="h3">Cardio</h3>
+          <p>Rząd bieżni, rowery stacjonarne i rower powietrzny. Na rozgrzewkę, na koniec treningu albo jako osobna sesja.</p>
+        </div>
+      </article>
+    </div>
+    <!-- TODO: jeśli klub chce, dopisać marki sprzętu i liczbę stanowisk (np. ile bieżni, ile racków) -->
+  </div>
+</section>
+
+<section class="sekcja sekcja--podniesiona" aria-labelledby="godziny-h">
+  <div class="wrap">
+    <div class="split">
+      <div class="prose">
+        <h2 class="h2" id="godziny-h">Godziny, które pasują do zmiany</h2>
+        <p class="mt-5">W tygodniu siłownia działa od 5:00 do północy. W sobotę trenujesz od 6:00 do 23:00, w niedzielę od 8:00 do 22:00.</p>
+        <p>W części godzin klub działa w trybie samoobsługowym, co bywalcy chwalą w opiniach. <span class="todo">do uzupełnienia: w jakich godzinach działa samoobsługa i jak wygląda wejście bez recepcji</span></p>
+        <p>Karnet kupisz w recepcji. Klub ma też własną aplikację: <a href="{{apka}}" rel="noopener" target="_blank">v3klub.gymmanager.io</a>.</p>
+        <!-- TODO: potwierdzić, co można załatwić w aplikacji (zakup karnetu, zapisy na zajęcia, wejście) i dopisać -->
+      </div>
+      <div>
+        <h3 class="h3 mb-0">Godziny otwarcia</h3>
+        <div class="mt-5">{{godziny}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja" aria-labelledby="trener-h">
+  <div class="wrap">
+    <div class="split split--srodek split--odwroc">
+      <div class="prose">
+        <h2 class="h2" id="trener-h">Trening z trenerem</h2>
+        <p class="mt-5">Jeśli nie wiesz, od czego zacząć, albo wracasz po kontuzji, umów trening personalny. W klubie prowadzą je:</p>
+        <ul>
+          <li><a href="~/trenerzy/#jacek"><strong>Jacek</strong></a>: absolwent wychowania fizycznego i rehabilitacji, rehabilitant i nauczyciel WF. Prowadzi też zajęcia na zdrowy kręgosłup i gimnastykę korekcyjną.</li>
+          <li><a href="~/trenerzy/#dawid"><strong>Dawid</strong></a>: absolwent wychowania fizycznego, dyplomowany instruktor, zawodowy zawodnik MMA.</li>
+        </ul>
+        <p>Termin ustalisz w recepcji albo telefonicznie: <a href="{{tel_href}}">{{tel}}</a>. Ceny treningów personalnych są w <a href="~/cennik/">cenniku</a>.</p>
+      </div>
+      <div class="ramka ramka--lewa">
+        {{img name="strefa-rackow" alt="Stanowiska z rackami na siłowni V3" sizes="(min-width: 900px) 45vw, 100vw"}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja sekcja--beton" aria-labelledby="pierwsza-h">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <h2 class="h2" id="pierwsza-h">Pierwsza wizyta</h2>
+        <p class="lead mt-5">Tak wygląda pierwsze wejście do klubu krok po kroku.</p>
+      </div>
+      <ol class="kroki">
+        <li><div><strong>Przyjdź do recepcji</strong><p>Wybierz wejście jednorazowe albo karnet. Ceny są w <a class="link" href="~/cennik/">cenniku</a>.</p></div></li>
+        <li><div><strong>Przebierz się w szatni</strong><p>Są szafki na ubrania i prysznice. Weź ręcznik, wodę i obuwie sportowe.</p></div></li>
+        <li><div><strong>Rozejrzyj się po strefach</strong><p>Wolne ciężary, racki, maszyny i cardio są w osobnych częściach sali.</p></div></li>
+        <li><div><strong>Chcesz planu? Umów trenera</strong><p>Na trening personalny umówisz się w recepcji albo telefonicznie.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja" aria-labelledby="wideo-silownia-h">
+  <div class="wrap">
+    <div class="split split--srodek">
+      <div class="sekcja__naglowek mb-0">
+        <h2 class="h2" id="wideo-silownia-h">Klub na nagraniu</h2>
+        <p>Zwykły poniedziałek w V3, nowe ustawienie maszyn i sklepik przy recepcji. Zobacz, ile jest miejsca i sprzętu, zanim przyjdziesz.</p>
+        <p>Rękawice, kaski i owijki kupisz na miejscu, więc na pierwszy trening sportów walki nie musisz szukać sprzętu w internecie.</p>
+      </div>
+      <div class="wideo-para wideo-para--3">
+        {{wideo key="silownia-sala" src="~/assets/video/silownia-poniedzialek.mp4" poster="wideo-silownia-poniedzialek" tytul="Poniedziałek w V3" opis="Siłownia, cardio i sale"}}
+        {{wideo key="silownia-nowe-maszyny" src="~/assets/video/silownia-nowe-maszyny.mp4" poster="wideo-silownia-nowe-maszyny" tytul="Nowe ustawienie" opis="Maszyny i wolne ciężary"}}
+        {{wideo key="sklepik-recepcja" src="~/assets/video/sklepik-recepcja.mp4" poster="wideo-sklepik-recepcja" tytul="Sklepik" opis="Rękawice, kaski, owijki"}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja sekcja--podniesiona" aria-labelledby="opinie-s-h">
+  <div class="wrap">
+    <h2 class="h2" id="opinie-s-h">O siłowni w opiniach</h2>
+    <div class="opinie mt-6">
+      <figure class="opinia"><blockquote><p>Najlepsza siłownia w całym Jarosławiu. Świetny klimat, przestrzennie. Aż chce się po prostu trenować.</p></blockquote><figcaption><strong>Damian</strong> · opinia z Google</figcaption></figure>
+      <figure class="opinia"><blockquote><p>Super siłownia, bardzo fajne panie na recepcji, bardzo czysto, porządek, samoobsługa, najdłużej otwarta siłka w Jaro.</p></blockquote><figcaption><strong>Dawid</strong> · opinia z Google</figcaption></figure>
+      <figure class="opinia"><blockquote><p>Bardzo dobrej jakości sprzęt, wszystko zadbane, czyste.</p></blockquote><figcaption><strong>Dominik</strong> · opinia z Google</figcaption></figure>
+      <figure class="opinia"><blockquote><p>It's a very good location with parking spots, the staff is amazing, very friendly team. There is a small shop inside.</p></blockquote><figcaption><strong>Bartek</strong> · opinia z Google</figcaption></figure>
+    </div>
+    <p class="przypis mt-5">Fragmenty opinii z Map Google, skrócone. <a class="link" href="{{maps}}" rel="noopener" target="_blank">Wszystkie opinie</a></p>
+  </div>
+</section>
+
+<section class="sekcja" aria-labelledby="faq-s-h">
+  <div class="wrap wrap--waski">
+    <h2 class="h2" id="faq-s-h">Siłownia: pytania</h2>
+    <div class="mt-6">
+{{faq}}
+? Do której jest czynna siłownia w weekend?
+W sobotę od 6:00 do 23:00, w niedzielę od 8:00 do 22:00. Od poniedziałku do piątku od 5:00 do północy.
+
+? Czy mogę przyjść na siłownię bez karnetu?
+Tak, możesz kupić wejście jednorazowe w recepcji. Ceny wejść i karnetów znajdziesz w <a href="~/cennik/">cenniku</a>.
+
+? Czy są prysznice i szafki?
+Tak. Szatnie mają szafki na ubrania i prysznice, obok są łazienki z umywalkami.
+
+? Czy jest trener, który pomoże ułożyć plan?
+Tak, treningi personalne prowadzą Jacek i Dawid. Termin ustalisz w recepcji albo pod numerem 788 463 717. Więcej o nich na stronie <a href="~/trenerzy/">trenerów</a>.
+
+? Czy mogę łączyć siłownię z zajęciami?
+Tak, w tym samym budynku jest Fight Zone (<a href="~/boks-jaroslaw/">boks</a>, <a href="~/kickboxing-jaroslaw/">kickboxing</a>, <a href="~/mma-jaroslaw/">MMA</a>) i sala <a href="~/fitness-jaroslaw/">fitness</a>. Godziny zajęć są w <a href="~/grafik/">grafiku</a>.
+{{/faq}}
+    </div>
+  </div>
+</section>
+
+<section class="sekcja sekcja--podniesiona" aria-labelledby="dalej-s-h">
+  <div class="wrap">
+    <h2 class="h2" id="dalej-s-h">Sprawdź też</h2>
+    <nav class="powiazane powiazane--4 mt-6" aria-labelledby="dalej-s-h">
+      <a href="~/cennik/"><strong>Cennik</strong><span>Karnety, wejście jednorazowe, treningi personalne</span></a>
+      <a href="~/fitness-jaroslaw/"><strong>Fitness</strong><span>Pilates, joga, zumba, zdrowy kręgosłup</span></a>
+      <a href="~/kickboxing-jaroslaw/"><strong>Kickboxing</strong><span>Grupy od 4 lat do dorosłych</span></a>
+      <a href="~/trenerzy/"><strong>Trenerzy</strong><span>Kto prowadzi zajęcia i treningi personalne</span></a>
+    </nav>
+  </div>
+</section>
+
+{{cta tytul="Przyjdź na pierwszy trening"}}

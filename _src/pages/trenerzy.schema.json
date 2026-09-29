@@ -1,0 +1,96 @@
+[
+ {
+  "@type": "Person",
+  "@id": "{{SITE_URL}}/trenerzy/#jacek",
+  "name": "Jacek",
+  "jobTitle": "Trener kickboxingu i boksu",
+  "knowsAbout": [
+   "Kickboxing",
+   "Boks",
+   "Gimnastyka korekcyjna",
+   "Trening personalny"
+  ],
+  "image": "{{SITE_URL}}/assets/img/trenerzy/jacek-405.webp",
+  "worksFor": {
+   "@id": "{{SITE_URL}}/#klub"
+  },
+  "url": "{{SITE_URL}}/trenerzy/#jacek"
+ },
+ {
+  "@type": "Person",
+  "@id": "{{SITE_URL}}/trenerzy/#ireneusz",
+  "name": "Ireneusz",
+  "jobTitle": "Trener kickboxingu i boksu",
+  "knowsAbout": [
+   "Kickboxing",
+   "Boks"
+  ],
+  "image": "{{SITE_URL}}/assets/img/trenerzy/ireneusz-405.webp",
+  "worksFor": {
+   "@id": "{{SITE_URL}}/#klub"
+  },
+  "url": "{{SITE_URL}}/trenerzy/#ireneusz"
+ },
+ {
+  "@type": "Person",
+  "@id": "{{SITE_URL}}/trenerzy/#damian",
+  "name": "Damian",
+  "jobTitle": "Instruktor kickboxingu i boksu",
+  "knowsAbout": [
+   "Kickboxing",
+   "Boks",
+   "Samoobrona"
+  ],
+  "image": "{{SITE_URL}}/assets/img/trenerzy/damian-405.webp",
+  "worksFor": {
+   "@id": "{{SITE_URL}}/#klub"
+  },
+  "url": "{{SITE_URL}}/trenerzy/#damian"
+ },
+ {
+  "@type": "Person",
+  "@id": "{{SITE_URL}}/trenerzy/#marcin",
+  "name": "Marcin",
+  "jobTitle": "Instruktor kickboxingu",
+  "knowsAbout": [
+   "Kickboxing"
+  ],
+  "image": "{{SITE_URL}}/assets/img/trenerzy/marcin-405.webp",
+  "worksFor": {
+   "@id": "{{SITE_URL}}/#klub"
+  },
+  "url": "{{SITE_URL}}/trenerzy/#marcin"
+ },
+ {
+  "@type": "Person",
+  "@id": "{{SITE_URL}}/trenerzy/#julia",
+  "name": "Julia",
+  "jobTitle": "Instruktorka taekwondo i kickboxingu dla dzieci",
+  "knowsAbout": [
+   "Taekwondo",
+   "Kickboxing",
+   "Aeroboxing"
+  ],
+  "image": "{{SITE_URL}}/assets/img/trenerzy/julia-300.webp",
+  "worksFor": {
+   "@id": "{{SITE_URL}}/#klub"
+  },
+  "url": "{{SITE_URL}}/trenerzy/#julia"
+ },
+ {
+  "@type": "Person",
+  "@id": "{{SITE_URL}}/trenerzy/#dawid",
+  "name": "Dawid",
+  "jobTitle": "Instruktor grapplingu i trener personalny",
+  "knowsAbout": [
+   "Grappling",
+   "MMA",
+   "Trening personalny"
+  ],
+  "image": "{{SITE_URL}}/assets/img/trenerzy/dawid-405.webp",
+  "worksFor": {
+   "@id": "{{SITE_URL}}/#klub"
+  },
+  "url": "{{SITE_URL}}/trenerzy/#dawid"
+ }
+]

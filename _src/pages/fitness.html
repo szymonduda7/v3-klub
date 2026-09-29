@@ -1,0 +1,161 @@
+<section class="page-hero">
+  <div class="wrap">
+    {{crumbs}}
+    <div class="page-hero__grid">
+      <div>
+        <h1 class="h1">Fitness w Jarosławiu: <span class="neon neon--zaplon">pilates, joga, zumba</span></h1>
+        <p class="lead">Zajęcia grupowe w sali fitness V3 Klub: od spokojnego pilatesu i jogi, przez zumbę i step, po aeroboxing. Osobno zajęcia na zdrowy kręgosłup i gimnastyka korekcyjna prowadzone przez rehabilitanta.</p>
+        <ul class="kluczowe">
+          <li>{{ikona users}}<span>Pilates, joga, zumba, step, aeroboxing, tabata, Booty Project, zdrowy kręgosłup, gimnastyka korekcyjna</span></li>
+          <li>{{ikona pin}}<span>Sala fitness, {{ulica}}, {{miasto}}</span></li>
+          <li>{{ikona clock}}<span>Klub czynny pn–pt {{godz 1}}, sob {{godz 6}}, nd {{godz 7}}</span></li>
+        </ul>
+        <div class="btn-rzad">
+          <a class="btn btn--neon" href="{{tel_href}}">{{ikona phone}}Zapisz się: {{tel}}</a>
+          <a class="btn btn--obrys" href="#zajecia">Rodzaje zajęć</a>
+        </div>
+      </div>
+      <div class="page-hero__foto ramka">
+        {{img name="zajecia-fitness-grupa" alt="Uczestniczki zajęć fitness V3 Klub w klubowych koszulkach pod ceglaną ścianą" sizes="(min-width: 900px) 40vw, 100vw" eager}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja" id="zajecia" aria-labelledby="zajecia-h">
+  <div class="wrap">
+    <div class="sekcja__naglowek">
+      <h2 class="h2" id="zajecia-h">Zajęcia fitness w V3</h2>
+      <p>Każde zajęcia mają inny cel. Poniżej krótko, czego się spodziewać i dla kogo są.</p>
+    </div>
+    <div class="cechy cechy--3">
+      <article class="cecha" id="pilates">
+        <h3 class="h3">Pilates</h3>
+        <p>Wolne, dokładne ćwiczenia na macie, które wzmacniają mięśnie brzucha, pleców i pośladków. Dobre przy siedzącej pracy i na start po przerwie.</p>
+        <p><strong>Prowadzi:</strong> Zuza <!-- TODO: potwierdzić imię i nazwisko instruktorki pilatesu (w opiniach Google: Zuza / Zuzia) --></p>
+      </article>
+      <article class="cecha" id="joga">
+        <h3 class="h3">Joga</h3>
+        <p>Pozycje rozciągające i wzmacniające połączone z oddechem. Poprawia zakres ruchu i pomaga się wyciszyć po pracy.</p>
+        <p><span class="todo">do uzupełnienia: prowadząca / prowadzący</span></p>
+      </article>
+      <article class="cecha" id="zumba">
+        <h3 class="h3">Zumba</h3>
+        <p>Trening taneczny do muzyki latynoskiej i popularnej. Dużo ruchu, proste kroki, nie trzeba umieć tańczyć.</p>
+        <p><span class="todo">do uzupełnienia: prowadząca / prowadzący</span></p>
+      </article>
+      <article class="cecha" id="step">
+        <h3 class="h3">Step fitness</h3>
+        <p>Choreografia na stopniu w rytm muzyki. Trening kondycyjny, który mocno pracuje nogami i pośladkami.</p>
+        <p><span class="todo">do uzupełnienia: prowadząca / prowadzący</span></p>
+      </article>
+      <article class="cecha" id="aeroboxing">
+        <h3 class="h3">Aeroboxing</h3>
+        <p>Ciosy i kopnięcia z kickboxingu w formie treningu do muzyki, bez kontaktu z partnerem. Dla osób, które chcą spróbować sportów walki bez walki.</p>
+        <p><strong>Prowadzi:</strong> <a class="link" href="~/trenerzy/#julia">Julia</a>, instruktorka taekwondo i zawodniczka kickboxingu</p>
+      </article>
+      <article class="cecha" id="zdrowy-kregoslup">
+        <h3 class="h3">Zdrowy kręgosłup i gimnastyka korekcyjna</h3>
+        <p>Zajęcia Akademii Zdrowia V3 Klub. Ćwiczenia wzmacniające mięśnie posturalne i korygujące wady postawy.</p>
+        <p><strong>Prowadzi:</strong> <a class="link" href="~/trenerzy/#jacek">Jacek</a>, absolwent wychowania fizycznego i rehabilitacji, rehabilitant</p>
+      </article>
+      <article class="cecha" id="tabata">
+        <h3 class="h3">Tabata</h3>
+        <p>Krótkie, intensywne interwały: 20 sekund pracy, 10 sekund przerwy. Mocny zastrzyk energii w krótkim czasie.</p>
+        <p><span class="todo">do uzupełnienia: prowadząca / prowadzący</span></p>
+      </article>
+      <article class="cecha" id="booty-project">
+        <h3 class="h3">Booty Project</h3>
+        <p>Zajęcia nastawione na budowanie i wzmacnianie pośladków. Ćwiczenia na macie i stepie.</p>
+        <p><span class="todo">do uzupełnienia: prowadząca / prowadzący</span></p>
+      </article>
+    </div>
+    <!-- TODO: czy są też inne zajęcia fitness (np. stretching, trening obwodowy)? Jeśli tak, dopisać kartę -->
+  </div>
+</section>
+
+<section class="sekcja sekcja--podniesiona" id="grafik-fitness" aria-labelledby="grafik-f-h">
+  <div class="wrap">
+    <div class="split">
+      <div class="prose">
+        <h2 class="h2" id="grafik-f-h">Kiedy są zajęcia</h2>
+        <p class="mt-5"><span class="todo">do uzupełnienia: grafik zajęć fitness (dzień, godzina, zajęcia, prowadząca)</span></p>
+        <p>Do czasu publikacji grafiku godziny zajęć fitness sprawdzisz w recepcji albo pod numerem <a href="{{tel_href}}">{{tel}}</a>.</p>
+        <!-- TODO: czy na zajęcia fitness trzeba się zapisywać (w aplikacji / w recepcji) i czy jest limit miejsc -->
+        <p>Grafik sali sportów walki jest na stronie <a href="~/grafik/">grafiku zajęć</a>.</p>
+      </div>
+      <div class="wideo-para wideo-para--3">
+        {{wideo key="fitness" src="~/assets/video/fitness-grupa.mp4" poster="wideo-fitness-grupa" tytul="Zajęcia grupowe" opis="Sala fitness V3"}}
+        {{wideo key="fitness-tabata" src="~/assets/video/fitness-tabata.mp4" poster="wideo-fitness-tabata" tytul="Tabata" opis="Krótkie, intensywne interwały"}}
+        {{wideo key="fitness-booty-project" src="~/assets/video/fitness-booty-project.mp4" poster="wideo-fitness-booty-project" tytul="Booty Project" opis="Trening pośladków"}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja" aria-labelledby="instr-h">
+  <div class="wrap">
+    <div class="split split--srodek">
+      <div class="prose">
+        <h2 class="h2" id="instr-h">Instruktorki fitness</h2>
+        <p class="mt-5">W opiniach Google o zajęciach fitness najczęściej pojawiają się dwa imiona: Zuza, która prowadzi pilates, i Wiktoria.</p>
+        <p><span class="todo">do uzupełnienia: krótkie profile instruktorek fitness (zdjęcie, doświadczenie, prowadzone zajęcia)</span></p>
+        <a class="strzalka mt-5" href="~/trenerzy/">Wszyscy trenerzy V3 {{ikona arrow}}</a>
+      </div>
+      <div class="ramka ramka--lewa">
+        {{img name="strefa-relaksu" alt="Strefa odpoczynku w V3 Klub z zieloną sofą i ścianą z roślin" sizes="(min-width: 900px) 45vw, 100vw"}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja sekcja--beton" aria-labelledby="opinie-f-h">
+  <div class="wrap">
+    <h2 class="h2" id="opinie-f-h">O zajęciach fitness</h2>
+    <div class="opinie mt-6">
+      <figure class="opinia"><blockquote><p>Świetna siłownia, a tutejsze zajęcia fitness to prawdziwy hit! Instruktorzy to profesjonaliści z ogromną pasją: Zuza i Wiktoria.</p></blockquote><figcaption><strong>Magda</strong> · opinia z Google</figcaption></figure>
+      <figure class="opinia"><blockquote><p>Świetna siłka i sala fitness. Gorąco polecam trenerkę Zuzię i jej pilates.</p></blockquote><figcaption><strong>Katarzyna</strong> · opinia z Google</figcaption></figure>
+      <figure class="opinia"><blockquote><p>Szczególne podziękowania dla trenerki Wiktorii: jest mega zaangażowana, pomocna…</p></blockquote><figcaption><strong>Dominika</strong> · opinia z Google</figcaption></figure>
+      <figure class="opinia"><blockquote><p>Pierwsza siłownia, na którą mam ochotę regularnie wracać. Panie na recepcji są przemiłe i pomocne, a trenerka Wiktoria jest najwspanialsza na świecie!</p></blockquote><figcaption><strong>Magdalena</strong> · opinia z Google</figcaption></figure>
+    </div>
+    <p class="przypis mt-5">Fragmenty opinii z Map Google, skrócone.</p>
+  </div>
+</section>
+
+<section class="sekcja" aria-labelledby="faq-f-h">
+  <div class="wrap wrap--waski">
+    <h2 class="h2" id="faq-f-h">Fitness: pytania</h2>
+    <div class="mt-6">
+{{faq}}
+? Jakie zajęcia fitness są w V3 Klub w Jarosławiu?
+Pilates, joga, zumba, step fitness, aeroboxing oraz zajęcia na zdrowy kręgosłup i gimnastyka korekcyjna.
+
+? Czy zajęcia fitness są dla początkujących?
+Tak. Najłagodniejszy start to pilates, joga albo zdrowy kręgosłup. Zumba i step są bardziej dynamiczne, ale kroki są proste.
+
+? Czym różni się pilates od jogi?
+Pilates skupia się na wzmacnianiu mięśni głębokich, zwłaszcza brzucha i pleców. Joga więcej czasu poświęca rozciąganiu, równowadze i oddechowi. Obie formy dobrze się uzupełniają.
+
+? Czy mogę łączyć zajęcia fitness z siłownią?
+Tak, siłownia jest w tym samym budynku. Zobacz <a href="~/silownia-jaroslaw/">siłownię</a> i karnety w <a href="~/cennik/">cenniku</a>.
+
+? Co zabrać na zajęcia fitness?
+Wygodny strój sportowy, wodę i ręcznik. Na miejscu są szatnie z prysznicami.
+{{/faq}}
+    </div>
+  </div>
+</section>
+
+<section class="sekcja sekcja--podniesiona" aria-labelledby="dalej-f-h">
+  <div class="wrap">
+    <h2 class="h2" id="dalej-f-h">Sprawdź też</h2>
+    <nav class="powiazane powiazane--4 mt-6" aria-labelledby="dalej-f-h">
+      <a href="~/silownia-jaroslaw/"><strong>Siłownia</strong><span>Czynna od 5:00 do północy</span></a>
+      <a href="~/kickboxing-jaroslaw/"><strong>Kickboxing</strong><span>Jeśli aeroboxing to za mało</span></a>
+      <a href="~/cennik/"><strong>Cennik</strong><span>Karnety i wejścia na zajęcia</span></a>
+      <a href="~/kontakt/"><strong>Kontakt</strong><span>Adres, telefon, dojazd</span></a>
+    </nav>
+  </div>
+</section>
+
+{{cta tytul="Zapytaj o najbliższe zajęcia"}}

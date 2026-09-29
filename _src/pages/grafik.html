@@ -1,0 +1,73 @@
+<section class="page-hero page-hero--bez-foto">
+  <div class="wrap">
+    {{crumbs}}
+    <div class="page-hero__grid">
+      <div>
+        <h1 class="h1">Grafik zajęć <span class="neon neon--zaplon">V3 Klub</span></h1>
+        <p class="lead">Wszystkie zajęcia sali sportów walki Fight Zone na każdy dzień tygodnia. Grafik obowiązuje od {{grafik_od}}. Kliknij nazwę zajęć, żeby przeczytać o nich więcej.</p>
+        <div class="btn-rzad">
+          <a class="btn btn--neon" href="{{tel_href}}">{{ikona phone}}Zapytaj o miejsce: {{tel}}</a>
+          <a class="btn btn--obrys" href="~/assets/img/grafik-fight-zone-plakat.webp" download>{{ikona download}}Pobierz plakat</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja" aria-labelledby="fz-grafik-h">
+  <div class="wrap">
+    <div class="sekcja__naglowek">
+      <h2 class="h2" id="fz-grafik-h">Fight Zone: tydzień</h2>
+      <p>Dzisiejszy dzień jest podświetlony. Siłownia działa niezależnie od zajęć, w godzinach otwarcia klubu.</p>
+    </div>
+    {{legenda}}
+    {{grafik_tydzien}}
+  </div>
+</section>
+
+<section class="sekcja sekcja--beton" id="trening-wprowadzajacy" aria-labelledby="tw-h">
+  <div class="wrap">
+    <div class="split split--srodek">
+      <div>
+        <h2 class="h2" id="tw-h">Trening wprowadzający dla nowych</h2>
+        <p class="lead mt-5">Każdy piątek, 17:30–18:30, sala Fight Zone.</p>
+      </div>
+      <div class="prose">
+        <p>Jeśli nigdy nie trenowałeś sportów walki, zacznij tutaj. To godzina dla osób, które są pierwszy raz, więc nikt nie oczekuje, że cokolwiek już umiesz.</p>
+        <p>Weź strój sportowy, wodę i ręcznik. Po treningu łatwiej wybrać, czy dalej chcesz trenować <a href="~/boks-jaroslaw/">boks</a>, <a href="~/kickboxing-jaroslaw/">kickboxing</a> czy <a href="~/mma-jaroslaw/">MMA</a>.</p>
+        <!-- TODO: potwierdzić, czy na trening wprowadzający trzeba się wcześniej zapisać i czy jest płatny -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja" id="fitness" aria-labelledby="fit-grafik-h">
+  <div class="wrap">
+    <div class="split">
+      <div class="prose">
+        <h2 class="h2" id="fit-grafik-h">Zajęcia fitness</h2>
+        <p class="mt-5"><span class="todo">do uzupełnienia: grafik sali fitness (pilates, joga, zumba, step, aeroboxing, zdrowy kręgosłup, gimnastyka korekcyjna)</span></p>
+        <p>Opisy zajęć są na stronie <a href="~/fitness-jaroslaw/">fitness w Jarosławiu</a>. Godziny potwierdzisz w recepcji: <a href="{{tel_href}}">{{tel}}</a>.</p>
+        <!-- TODO: godziny taekwondo, grapplingu i aikido, jeśli odbywają się poza grafikiem Fight Zone -->
+      </div>
+      <div>
+        <h3 class="h3">Godziny otwarcia klubu</h3>
+        <div class="mt-5">{{godziny}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja sekcja--podniesiona" aria-labelledby="dalej-g-h">
+  <div class="wrap">
+    <h2 class="h2" id="dalej-g-h">Zajęcia i ceny</h2>
+    <nav class="powiazane powiazane--4 mt-6" aria-labelledby="dalej-g-h">
+      <a href="~/kickboxing-jaroslaw/"><strong>Kickboxing</strong><span>Grupy wiekowe i Fight Team</span></a>
+      <a href="~/boks-jaroslaw/"><strong>Boks</strong><span>Wtorek i czwartek 19:00</span></a>
+      <a href="~/mma-jaroslaw/"><strong>MMA</strong><span>Piątek 20:00, sobota 12:00</span></a>
+      <a href="~/cennik/"><strong>Cennik</strong><span>Karnety na zajęcia i siłownię</span></a>
+    </nav>
+  </div>
+</section>
+
+{{cta tytul="Masz pytanie o grupę?" tekst="Zadzwoń do recepcji, podpowiemy, które zajęcia pasują do wieku i doświadczenia."}}

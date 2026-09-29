@@ -1,0 +1,121 @@
+<section class="page-hero page-hero--bez-foto">
+  <div class="wrap">
+    {{crumbs}}
+    <div class="page-hero__grid">
+      <div>
+        <h1 class="h1">Cennik karnetów <span class="neon neon--zaplon">i wejść</span></h1>
+        <p class="lead">Ceny karnetów na siłownię, zajęć w Fight Zone i sali fitness, treningów personalnych oraz voucherów podarunkowych w V3 Klub w Jarosławiu.</p>
+        <div class="btn-rzad">
+          <a class="btn btn--neon" href="{{tel_href}}">{{ikona phone}}Zapytaj o karnet: {{tel}}</a>
+          <a class="btn btn--obrys" href="{{apka}}" rel="noopener" target="_blank">{{ikona phone-app}}Aplikacja klubu</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- TODO: cały cennik: podać faktyczne warianty karnetów (nazwy, okresy, zniżki studenckie/uczniowskie, karty sportowe) i ceny. Nazwy wierszy poniżej to tylko szkielet do podmiany. -->
+
+<section class="sekcja" aria-labelledby="ceny-h">
+  <div class="wrap">
+    <h2 class="sr-only" id="ceny-h">Ceny</h2>
+    <div class="ceny">
+      <div class="cena-blok" id="silownia">
+        <h2 class="h3">Siłownia</h2>
+        <table>
+          <tbody>
+            <tr><th scope="row">Wejście jednorazowe<span class="opis">jeden trening na siłowni</span></th><td><span class="todo">cena</span></td></tr>
+            <tr><th scope="row">Karnet miesięczny<span class="opis">wejścia bez limitu w godzinach otwarcia</span></th><td><span class="todo">cena</span></td></tr>
+            <tr><th scope="row">Pozostałe karnety<span class="opis">np. dłuższe okresy, zniżki</span></th><td><span class="todo">do uzupełnienia</span></td></tr>
+          </tbody>
+        </table>
+        <div class="cena-blok__stopka"><a class="strzalka" href="~/silownia-jaroslaw/">O siłowni {{ikona arrow}}</a></div>
+      </div>
+
+      <div class="cena-blok" id="fight-zone">
+        <h2 class="h3">Fight Zone: sporty walki</h2>
+        <table>
+          <tbody>
+            <tr><th scope="row">Kickboxing dzieci i młodzież<span class="opis">Kids 4–6, Start 7–10, Kadet 10–13, Junior 14–18</span></th><td><span class="todo">cena</span></td></tr>
+            <tr><th scope="row">Kickboxing dorośli</th><td><span class="todo">cena</span></td></tr>
+            <tr><th scope="row">Boks</th><td><span class="todo">cena</span></td></tr>
+            <tr><th scope="row">MMA</th><td><span class="todo">cena</span></td></tr>
+            <tr><th scope="row">Samoobrona / Krav Maga</th><td><span class="todo">cena</span></td></tr>
+            <tr><th scope="row">SSW Cobra Ju-Jitsu</th><td><span class="todo">cena</span></td></tr>
+          </tbody>
+        </table>
+        <div class="cena-blok__stopka"><a class="strzalka" href="~/grafik/">Grafik zajęć {{ikona arrow}}</a></div>
+      </div>
+
+      <div class="cena-blok" id="fitness">
+        <h2 class="h3">Zajęcia fitness</h2>
+        <table>
+          <tbody>
+            <tr><th scope="row">Pojedyncze zajęcia<span class="opis">pilates, joga, zumba, step, aeroboxing</span></th><td><span class="todo">cena</span></td></tr>
+            <tr><th scope="row">Karnet na zajęcia fitness</th><td><span class="todo">cena</span></td></tr>
+            <tr><th scope="row">Zdrowy kręgosłup, gimnastyka korekcyjna</th><td><span class="todo">cena</span></td></tr>
+          </tbody>
+        </table>
+        <div class="cena-blok__stopka"><a class="strzalka" href="~/fitness-jaroslaw/">Rodzaje zajęć {{ikona arrow}}</a></div>
+      </div>
+
+      <div class="cena-blok" id="trening-personalny">
+        <h2 class="h3">Trening personalny</h2>
+        <table>
+          <tbody>
+            <tr><th scope="row">Pojedynczy trening personalny</th><td><span class="todo">cena</span></td></tr>
+            <tr><th scope="row">Pakiet treningów</th><td><span class="todo">cena</span></td></tr>
+          </tbody>
+        </table>
+        <div class="cena-blok__stopka"><a class="strzalka" href="~/trenerzy/">Trenerzy personalni {{ikona arrow}}</a></div>
+      </div>
+    </div>
+    <p class="przypis mt-5">Ceny brutto. <span class="todo">do uzupełnienia: data aktualizacji cennika</span></p>
+    <!-- TODO: czy klub honoruje karty Multisport / Medicover Sport / FitProfit / PZU Sport? Jeśli tak, dodać sekcję i pytanie w FAQ -->
+  </div>
+</section>
+
+<section class="sekcja sekcja--podniesiona" id="voucher" aria-labelledby="voucher-h">
+  <div class="wrap">
+    <div class="split split--srodek">
+      <div class="prose">
+        <h2 class="h2" id="voucher-h">Voucher podarunkowy</h2>
+        <p class="mt-5">Prezent dla kogoś, kto chce zacząć trenować albo już trenuje. Voucher V3 Klub kupisz w recepcji przy Poniatowskiego 24.</p>
+        <p><span class="todo">do uzupełnienia: na co można wykorzystać voucher (kwota, karnet, zajęcia), wartości i ważność</span></p>
+        <a class="btn btn--neon mt-5" href="{{tel_href}}">{{ikona phone}}Zapytaj o voucher</a>
+      </div>
+      <div class="ramka ramka--lewa">
+        {{img name="voucher-podarunkowy" alt="Vouchery podarunkowe V3 Klub trzymane w dłoni przed podświetlonym logo klubu" sizes="(min-width: 900px) 45vw, 100vw"}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja" id="aplikacja" aria-labelledby="apka-h">
+  <div class="wrap wrap--waski">
+    <h2 class="h2" id="apka-h">Aplikacja V3 Klub</h2>
+    <div class="prose mt-5">
+      <p>Klub ma własną aplikację w systemie GymManager. Znajdziesz ją pod adresem <a href="{{apka}}" rel="noopener" target="_blank">v3klub.gymmanager.io</a>.</p>
+      <p><span class="todo">do uzupełnienia: co można zrobić w aplikacji (zakup i przedłużenie karnetu, zapisy na zajęcia, wejście do klubu)</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja sekcja--beton" aria-labelledby="faq-c-h">
+  <div class="wrap wrap--waski">
+    <h2 class="h2" id="faq-c-h">Cennik: pytania</h2>
+    <div class="mt-6">
+{{faq}}
+? Czy mogę przyjść na jeden trening bez karnetu?
+Tak, na siłownię jest wejście jednorazowe. Kupisz je w recepcji w godzinach otwarcia klubu.
+
+? Gdzie kupić karnet do V3 Klub?
+W recepcji przy Poniatowskiego 24 w Jarosławiu. Klub ma też aplikację: v3klub.gymmanager.io.
+
+? Czy mogę kupić karnet w prezencie?
+Tak, w recepcji są vouchery podarunkowe V3 Klub.
+{{/faq}}
+    </div>
+  </div>
+</section>
+
+{{cta tytul="Nie wiesz, który karnet wybrać?" tekst="Zadzwoń albo zapytaj w recepcji. Powiedz, jak często chcesz trenować i na jakie zajęcia, a dobierzemy karnet."}}

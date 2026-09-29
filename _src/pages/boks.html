@@ -1,0 +1,171 @@
+<section class="page-hero">
+  <div class="wrap">
+    {{crumbs}}
+    <div class="page-hero__grid">
+      <div>
+        <h1 class="h1">Boks w Jarosławiu <span class="neon neon--zaplon">we wtorki i czwartki</span></h1>
+        <p class="lead">Treningi bokserskie w Fight Zone V3 Klub. Ring, worki, tarcze i trenerzy, którzy w sportach walki siedzą od kilkudziesięciu lat. Możesz zacząć od zera.</p>
+        <ul class="kluczowe">
+          <li>{{ikona clock}}<span>Wtorek i czwartek, 19:00–20:15 (75 minut)</span></li>
+          <li>{{ikona pin}}<span>Fight Zone na piętrze, {{ulica}}, {{miasto}}</span></li>
+          <li>{{ikona users}}<span>Nowe osoby: piątkowy trening wprowadzający o 17:30</span></li>
+        </ul>
+        <div class="btn-rzad">
+          <a class="btn btn--neon" href="{{tel_href}}">{{ikona phone}}Zapisz się: {{tel}}</a>
+          <a class="btn btn--obrys" href="~/grafik/">{{ikona calendar}}Grafik</a>
+        </div>
+      </div>
+      <div class="page-hero__foto ramka">
+        {{img name="ring-bokserski-kaski" alt="Ring bokserski z czerwonymi linami i kaskami treningowymi ułożonymi na macie" sizes="(min-width: 900px) 40vw, 100vw" eager pos="45% 50%"}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja" aria-labelledby="czego-h">
+  <div class="wrap">
+    <div class="split">
+      <div class="prose">
+        <h2 class="h2" id="czego-h">Czego uczysz się na boksie</h2>
+        <p class="mt-5">Boks to tylko ręce, ale praca idzie z nóg. Zanim zaczniesz mocno bić w worek, uczysz się stać tak, żeby nie stracić równowagi po pierwszym ciosie.</p>
+        <ul>
+          <li><strong>Postawa i garda.</strong> Ustawienie nóg, rąk i brody, z którego wszystko się zaczyna.</li>
+          <li><strong>Praca nóg.</strong> Krok do przodu, w tył i w bok bez krzyżowania nóg, skracanie i zrywanie dystansu.</li>
+          <li><strong>Ciosy.</strong> Proste, sierpowe i podbródkowe, potem łączenie ich w serie.</li>
+          <li><strong>Obrona.</strong> Blok, zbicie, unik i odchylenie, bo boks to też nie dać się trafić.</li>
+          <li><strong>Kondycja.</strong> Rundy na worku i tarczach robią swoje, 75 minut mija szybko.</li>
+        </ul>
+        <!-- TODO: poprosić trenera boksu o 2-3 zdania o tym, jak wygląda jego trening (rozgrzewka, tarcze, sparingi) i podmienić lub uzupełnić tę sekcję -->
+      </div>
+      <div class="ramka ramka--lewa">
+        {{img name="fight-zone-sala" alt="Sala Fight Zone z rzędem worków bokserskich i matami" sizes="(min-width: 900px) 45vw, 100vw"}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja sekcja--beton" id="dla-poczatkujacych" aria-labelledby="pocz-h">
+  <div class="wrap">
+    <div class="sekcja__naglowek">
+      <h2 class="h2" id="pocz-h">Boks dla początkujących</h2>
+      <p>Na boks można przyjść bez żadnego doświadczenia. Nie musisz mieć formy, żeby zacząć, formę robi się na treningach.</p>
+    </div>
+    <ol class="kroki">
+      <li><div><strong>Przyjdź w piątek o 17:30</strong><p>Trening wprowadzający dla nowych osób w Fight Zone. Poznasz trenera, salę i podstawy.</p></div></li>
+      <li><div><strong>Weź strój sportowy, wodę i ręcznik</strong><p>Rękawice i owijki kupisz z czasem, na start zapytaj trenera, jakie wybrać. <span class="todo">do uzupełnienia: czy klub pożycza rękawice na pierwsze zajęcia</span></p></div></li>
+      <li><div><strong>Dołącz do grupy we wtorek lub czwartek</strong><p>Treningi 19:00–20:15. Na początku pracujesz na workach i tarczach, sparingi przychodzą później.</p></div></li>
+    </ol>
+    <!-- TODO: potwierdzić z trenerem, że początkujący nie sparują od razu -->
+  </div>
+</section>
+
+<section class="sekcja" aria-labelledby="kto-h">
+  <div class="wrap">
+    <div class="sekcja__naglowek">
+      <h2 class="h2" id="kto-h">Kto prowadzi boks w V3</h2>
+      <p>Boks prowadzą w klubie trenerzy, którzy uczą też kickboxingu: dwóch trenerów II klasy PZKB i sędzia PZKB.</p>
+    </div>
+    <div class="trenerzy-mini">
+      <a class="trener-mini" href="~/trenerzy/#jacek">{{img name="trenerzy/jacek" alt="Trener Jacek" sizes="88px"}}<div><strong>Jacek</strong><span>Instruktor boksu, trener II klasy Polskiego Związku Kickboxingu, wielokrotny mistrz Polski. W sporcie od 34 lat.</span></div></a>
+      <a class="trener-mini" href="~/trenerzy/#ireneusz">{{img name="trenerzy/ireneusz" alt="Trener Ireneusz" sizes="88px"}}<div><strong>Ireneusz</strong><span>Trener II klasy PZKB i sędzia klasy B, wielokrotny mistrz Polski. W sporcie od 38 lat.</span></div></a>
+      <a class="trener-mini" href="~/trenerzy/#damian">{{img name="trenerzy/damian" alt="Instruktor Damian" sizes="88px"}}<div><strong>Damian</strong><span>Instruktor kickboxingu, licencjonowany sędzia PZKB, szkolenia z technik interwencyjnych.</span></div></a>
+    </div>
+    <!-- TODO: kto prowadzi grupę boksu we wtorki i czwartki o 19:00 -->
+  </div>
+</section>
+
+<section class="sekcja sekcja--podniesiona" aria-labelledby="bvk-h">
+  <div class="wrap">
+    <div class="sekcja__naglowek">
+      <h2 class="h2" id="bvk-h">Boks czy kickboxing?</h2>
+      <p>Obie dyscypliny trenujesz w tej samej sali, więc nie musisz wybierać na zawsze. Możesz je łączyć: razem to cztery treningi w tygodniu.</p>
+    </div>
+    <div class="porownanie">
+      <div>
+        <h3 class="h3">Boks</h3>
+        <ul>
+          <li>Tylko ciosy rękami, dużo pracy nóg i obrony głową</li>
+          <li>Wtorek i czwartek, 19:00–20:15</li>
+          <li>Dobry wybór, jeśli chcesz dopracować technikę rąk</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="h3">Kickboxing</h3>
+        <ul>
+          <li>Ręce i nogi, kopnięcia na różnych wysokościach</li>
+          <li>Dorośli: poniedziałek i środa, 20:00–21:15</li>
+          <li>Grupy dla dzieci od 4 lat i grupa zawodnicza</li>
+        </ul>
+        <a class="strzalka mt-5" href="~/kickboxing-jaroslaw/">Kickboxing w Jarosławiu {{ikona arrow}}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja" aria-labelledby="grafik-b-h">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <h2 class="h2" id="grafik-b-h">Kiedy są treningi</h2>
+        <p class="lead mt-5">Boks jest dwa razy w tygodniu. Po nim, o 20:15, w tej samej sali zaczyna się samoobrona i Krav Maga.</p>
+        <div class="mt-6">{{grafik_tabela d="boks,start"}}</div>
+        <div class="info-box mt-6" id="boks-dzieci">
+          <p><strong>Boks dla dzieci i młodzieży.</strong> Rodzice w opiniach piszą o dzieciach trenujących boks u trenera Jacka. <span class="todo">do uzupełnienia: godziny i wiek grup bokserskich dla dzieci</span> Najmłodsze dzieci zaczynają zwykle od <a class="link" href="~/kickboxing-jaroslaw/#grupy">grup kickboxingu od 4 lat</a>.</p>
+        </div>
+      </div>
+      <div class="wideo-para">
+        {{wideo key="boks" src="~/assets/video/boks-trening.mp4" poster="wideo-boks-trening" tytul="Trening boksu" opis="Tarcze, worki i skakanka"}}
+        {{wideo key="boks-wieczor-walk" src="~/assets/video/boks-wieczor-walk.mp4" poster="wideo-boks-wieczor-walk" tytul="Wieczór walk" opis="Walki bokserskie w ringu"}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekcja sekcja--beton" aria-labelledby="opinie-b-h">
+  <div class="wrap">
+    <h2 class="h2" id="opinie-b-h">O treningach boksu</h2>
+    <div class="opinie mt-6">
+      <figure class="opinia"><blockquote><p>Syn uczęszcza na treningi boksu do pana Jacka, jest bardzo zadowolony. Profesjonalny trener, świetne podejście do dzieci i młodzieży.</p></blockquote><figcaption><strong>Paulina</strong> · opinia z Google</figcaption></figure>
+      <figure class="opinia"><blockquote><p>Najlepsza siłownia w mieście, dobre treningi boksu, a pan Jacek to super gość.</p></blockquote><figcaption><strong>Hubert</strong> · opinia z Google</figcaption></figure>
+    </div>
+    <p class="przypis mt-5">Fragmenty opinii z Map Google, skrócone.</p>
+  </div>
+</section>
+
+<section class="sekcja" aria-labelledby="faq-b-h">
+  <div class="wrap wrap--waski">
+    <h2 class="h2" id="faq-b-h">Boks: pytania</h2>
+    <div class="mt-6">
+{{faq}}
+? Czy mogę zacząć trenować boks bez doświadczenia?
+Tak. Najłatwiej zacząć od piątkowego treningu wprowadzającego o 17:30, a potem dołączyć do grupy we wtorek lub czwartek o 19:00.
+
+? Ile trwa trening boksu?
+75 minut, od 19:00 do 20:15, we wtorki i czwartki.
+
+? Co zabrać na pierwszy trening bokserski?
+Strój sportowy, wodę i ręcznik. Szatnie z prysznicami są w klubie. O rękawice zapytaj trenera przed pierwszymi zajęciami.
+
+? Ile kosztuje trening boksu w Jarosławiu?
+Ceny karnetów na zajęcia Fight Zone i pojedynczych wejść są w <a href="~/cennik/">cenniku V3 Klub</a>.
+
+? Czy mogę łączyć boks z siłownią?
+Tak, siłownia jest w tym samym budynku i działa od 5:00 do północy w dni powszednie. Zobacz <a href="~/silownia-jaroslaw/">siłownię</a>.
+{{/faq}}
+    </div>
+  </div>
+</section>
+
+<section class="sekcja sekcja--podniesiona" aria-labelledby="dalej-b-h">
+  <div class="wrap">
+    <h2 class="h2" id="dalej-b-h">Sprawdź też</h2>
+    <nav class="powiazane powiazane--4 mt-6" aria-labelledby="dalej-b-h">
+      <a href="~/kickboxing-jaroslaw/"><strong>Kickboxing</strong><span>Ręce i nogi, grupy od 4 lat do dorosłych</span></a>
+      <a href="~/mma-jaroslaw/"><strong>MMA</strong><span>Piątek i sobota, stójka i parter</span></a>
+      <a href="~/trenerzy/"><strong>Trenerzy</strong><span>Jacek, Ireneusz, Damian</span></a>
+      <a href="~/cennik/"><strong>Cennik</strong><span>Karnety na zajęcia Fight Zone</span></a>
+    </nav>
+  </div>
+</section>
+
+{{cta tytul="Zacznij boks w piątek o 17:30" tekst="Trening wprowadzający dla nowych osób w Fight Zone, Poniatowskiego 24. Zadzwoń, jeśli chcesz się upewnić, że jest miejsce."}}
