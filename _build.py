@@ -303,7 +303,9 @@ def wideo(attrs):
         karta = " wideo--karta" if "karta" in attrs else ""
         podpis = f'<figcaption>{tytul}<span>{opis}</span></figcaption>' if not karta else ""
         return (f'<figure class="wideo wideo--gotowe{poziome}{karta}" data-src="{src}" data-opis="{html.escape(tytul)}">'
-                f'<div class="wideo__ekran">{p}</div>{podpis}</figure>')
+                f'<div class="wideo__ekran">{p}<button class="wideo__otworz" type="button" '
+                f'aria-label="Otwórz nagranie na pełnym ekranie: {html.escape(tytul)}">'
+                f'<span class="wideo__play">{ikona("play")}</span></button></div>{podpis}</figure>')
     return (f'<!-- WIDEO ({key}): wgraj plik do assets/video/{key}.mp4 i wpisz data-src="~/assets/video/{key}.mp4" -->'
             f'<figure class="wideo{poziome}" data-src="{src}" data-opis="{html.escape(tytul)}">'
             f'<div class="wideo__ekran">{p}<div class="wideo__znacznik"><span class="wideo__play">{ikona("play")}</span>'
@@ -421,7 +423,7 @@ def header(page):
     for slug, label in NAV:
         cur = ' aria-current="page"' if slug == page["slug"] else ""
         items += f'<li><a href="~/{slug}/"{cur}>{label}</a></li>'
-        mob += f'<li><a href="~/{slug}/"{cur}>{label}{ikona("arrow")}</a></li>'
+        mob += f'<li><a href="~/{slug}/"{cur}>{label}</a></li>'
     return f'''<a class="skip-link" href="#tresc">Przejdź do treści</a>
 <header class="site-header">
   <div class="wrap site-header__in">

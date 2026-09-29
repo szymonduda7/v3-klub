@@ -140,7 +140,11 @@
       fig.querySelector(".wideo__ekran").appendChild(v);
       fig.classList.add("ma-wideo");
     };
-    if ("IntersectionObserver" in window) {
+    /* na telefonie nagrania nie grają w sekcjach: miniatura + otwieranie na pełnym ekranie */
+    var telefon = window.matchMedia("(max-width: 699px)").matches;
+    if (telefon) {
+      /* nic nie montujemy */
+    } else if ("IntersectionObserver" in window) {
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) { if (e.isIntersecting) { mount(e.target); io.unobserve(e.target); } });
       }, { rootMargin: "200px" });
@@ -148,6 +152,40 @@
     } else {
       slots.forEach(mount);
     }
+  }
+
+  /* ---------- nagranie na pełnym ekranie ---------- */
+  var otworz = document.querySelectorAll(".wideo__otworz");
+  if (otworz.length && window.HTMLDialogElement) {
+    var box = document.createElement("dialog");
+    box.className = "lightbox";
+    box.innerHTML = '<button class="lightbox__zamknij" type="button" aria-label="Zamknij nagranie">' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>' +
+      '<video playsinline controls loop></video>';
+    document.body.appendChild(box);
+    var lbVideo = box.querySelector("video");
+    var zamknij = function () { if (box.open) box.close(); };
+    box.querySelector(".lightbox__zamknij").addEventListener("click", zamknij);
+    /* klik w czarne tło (poza nagraniem) też zamyka */
+    box.addEventListener("click", function (e) { if (e.target === box) zamknij(); });
+    box.addEventListener("close", function () {
+      lbVideo.pause(); lbVideo.removeAttribute("src"); lbVideo.load();
+      document.body.style.overflow = "";
+      /* wznów nagrania grające w sekcjach */
+      document.querySelectorAll(".wideo.ma-wideo video").forEach(function (v) { if (v.autoplay) v.play().catch(function () {}); });
+    });
+    otworz.forEach(function (b) {
+      b.addEventListener("click", function () {
+        var fig = b.closest(".wideo");
+        document.querySelectorAll(".wideo.ma-wideo video").forEach(function (v) { v.pause(); });
+        lbVideo.src = fig.getAttribute("data-src");
+        lbVideo.setAttribute("aria-label", fig.getAttribute("data-opis") || "Nagranie z treningu w V3 Klub");
+        lbVideo.muted = true;
+        document.body.style.overflow = "hidden";
+        box.showModal();
+        lbVideo.play().catch(function () {});
+      });
+    });
   }
 
   /* ---------- mapa Google ładowana po kliknięciu ---------- */
