@@ -199,7 +199,7 @@ def img(name, alt, sizes="100vw", eager=False, cls="", pos=""):
             f'<img src="~/assets/img/{name}-{fallback}.webp" width="{fallback}" height="{h}" '
             f'alt="{html.escape(alt)}"{c}{st} {load}></picture>')
 
-# tło hero na stronie głównej: (nazwa sali, zdjęcie na komputer, zdjęcie na telefon)
+# tło hero na stronie głównej: (sala, zdjęcie na komputer, zdjęcie na telefon)
 HERO_SLAJDY = [
     ("Siłownia", "silownia-strefa-wolnych-ciezarow", "silownia-sala-glowna"),
     ("Fight Zone", "ring-bokserski-kaski", "fight-zone-sala"),
@@ -207,11 +207,11 @@ HERO_SLAJDY = [
     ("Cardio", "cardio-air-bike", "bieznie-cardio"),
 ]
 
-def hero_tlo(tylko_sale=False):
+def hero_tlo():
     """Zdjęcia w tle hero. Pierwsze ładuje się od razu, kolejne JS podmienia z data-srcset po załadowaniu strony."""
     def srcset(name, ext):
         return ", ".join(f"~/assets/img/{name}-{w}.{ext} {w}w" for w in MANIFEST[name]["widths"])
-    slajdy, zakladki = [], []
+    slajdy = []
     for i, (sala, d, m) in enumerate(HERO_SLAJDY):
         a = "srcset" if i == 0 else "data-srcset"
         src = "src" if i == 0 else "data-src"
@@ -224,10 +224,6 @@ def hero_tlo(tylko_sale=False):
             f'<source type="image/avif" {a}="{srcset(m, "avif")}" sizes="100vw">'
             f'<source type="image/webp" {a}="{srcset(m, "webp")}" sizes="100vw">'
             f'<img {src}="~/assets/img/{m}-{mw}.webp" alt="" decoding="async" {load}></picture>')
-        cur = ' aria-current="true"' if i == 0 else ""
-        zakladki.append(f'<li><button type="button" data-slajd="{i}"{cur}>{sala}</button></li>')
-    if tylko_sale:
-        return f'<ul class="hero__sale" aria-label="Zdjęcie w tle">{"".join(zakladki)}</ul>'
     return f'<div class="hero__tlo" aria-hidden="true">{"".join(slajdy)}</div>'
 
 def img_abs(name):
@@ -541,7 +537,6 @@ def render_body(raw, page, faq_acc):
         if tag == "legenda": return legenda()
         if tag == "wideo": return wideo(a)
         if tag == "hero_tlo": return hero_tlo()
-        if tag == "hero_sale": return hero_tlo(tylko_sale=True)
         if tag == "cta": return cta(a)
         if tag == "dane_grafik":
             data = {"zajecia": [dict(z, url="~" + DYSCYPLINY[z["d"]][1]) for z in GRAFIK]}

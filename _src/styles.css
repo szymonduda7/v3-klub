@@ -314,7 +314,7 @@ button { font: inherit; color: inherit; }
   background:
     linear-gradient(to top, var(--grafit) 0%, rgba(17, 19, 18, 0.88) 38%, rgba(17, 19, 18, 0.35) 75%, rgba(17, 19, 18, 0.2) 100%);
 }
-.hero__uklad { width: 100%; display: grid; gap: var(--s-6); align-items: end; }
+.hero__uklad { width: 100%; }
 .hero__tresc { max-width: 44rem; }
 .hero .h1 { margin-bottom: var(--s-5); text-wrap: balance; }
 .hero .lead { margin-bottom: var(--s-5); color: #c9cfc9; }
@@ -330,25 +330,6 @@ button { font: inherit; color: inherit; }
   letter-spacing: -0.02em; line-height: 1; color: var(--tekst); font-variant-numeric: tabular-nums;
 }
 
-/* nazwy sal: przełącznik zdjęć w tle */
-.hero__sale { list-style: none; display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-5); }
-.hero__sale button {
-  position: relative; padding: 0.5rem 0; background: none; border: 0; cursor: pointer;
-  font-family: var(--f-display); font-stretch: 85%; font-weight: 700;
-  font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase;
-  color: rgba(238, 241, 236, 0.55);
-  transition: color 0.2s ease;
-}
-.hero__sale button::after {
-  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
-  background: var(--neon); transform: scaleX(0); transform-origin: left;
-}
-.hero__sale button:hover, .hero__sale button[aria-current="true"] { color: var(--tekst); }
-.hero__sale button:active { transform: translateY(1px); }
-.hero__sale button[aria-current="true"]::after { transform: scaleX(1); }
-.hero.is-gra .hero__sale button[aria-current="true"]::after { animation: pasek var(--hero-czas, 6s) linear both; }
-@keyframes pasek { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-
 @media (min-width: 900px) {
   .hero { padding-block: var(--s-9) var(--s-7); }
   .hero__tlo::after {
@@ -356,7 +337,6 @@ button { font: inherit; color: inherit; }
       linear-gradient(to right, rgba(17, 19, 18, 0.92) 0%, rgba(17, 19, 18, 0.72) 42%, rgba(17, 19, 18, 0.15) 75%),
       linear-gradient(to top, var(--grafit) 0%, rgba(17, 19, 18, 0) 35%);
   }
-  .hero__uklad { grid-template-columns: 1fr auto; gap: var(--s-8); }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero__slajd { transition: none; }
@@ -589,7 +569,35 @@ button { font: inherit; color: inherit; }
   .galeria figure { flex: 0 0 62%; scroll-snap-align: start; }
   .galeria .szeroki { flex-basis: 85%; }
   .galeria img, .galeria .szeroki img { aspect-ratio: 4 / 5; }
+
+  /* karuzele: opinie i dyscypliny */
+  div.opinie, .dyscypliny {
+    display: flex; gap: var(--s-3); overflow-x: auto; scroll-snap-type: x mandatory;
+    margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter);
+    scroll-padding-inline: var(--gutter); scrollbar-width: none;
+    background: none; border: 0;
+  }
+  .opinie::-webkit-scrollbar, .dyscypliny::-webkit-scrollbar { display: none; }
+  .opinie > .opinia { flex: 0 0 84%; scroll-snap-align: start; }
+  .dyscyplina { flex: 0 0 84%; scroll-snap-align: start; border: 1px solid var(--linia); background: var(--grafit-2); }
+  .dyscyplina .h2 { font-size: 2rem; }
 }
+
+/* kropki pod karuzelą (dodaje JS, tylko na telefonie) */
+.kropki { display: flex; justify-content: center; gap: 0.25rem; margin-top: var(--s-4); }
+.kropki button {
+  width: 28px; height: 28px; display: grid; place-items: center;
+  background: none; border: 0; padding: 0; cursor: pointer;
+}
+.kropki button::before {
+  content: ""; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--linia); transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.kropki button[aria-current="true"]::before { background: var(--neon); transform: scale(1.25); }
+.sekcja--beton .kropki button::before { background: var(--beton-2); }
+.sekcja--beton .kropki button[aria-current="true"]::before { background: var(--neon-ciemny); }
+.kropki button:active::before { transform: scale(0.9); }
+@media (min-width: 700px) { .kropki { display: none; } }
 
 /* ---------- grafik ---------- */
 .legenda { list-style: none; display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-4); margin-bottom: var(--s-5); font-size: 0.93rem; color: var(--tekst-2); }

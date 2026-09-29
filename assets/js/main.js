@@ -46,42 +46,28 @@
     dzisGodz.querySelector(".hero__dzis-godz").textContent = fmt(hd[0]) + "–" + (hd[1] === "24:00" ? "0:00" : fmt(hd[1]));
   }
 
-  /* ---------- hero: zdjęcia sal zmieniają się w tle ---------- */
+  /* ---------- hero: zdjęcia sal zmieniają się same w tle ---------- */
   var hero = document.querySelector(".hero");
   var slajdy = hero ? hero.querySelectorAll(".hero__slajd") : [];
-  if (slajdy.length > 1) {
-    var przyciski = hero.querySelectorAll("[data-slajd]");
-    var CZAS = 6000, akt = 0, timer = null, pauza = false;
-    var reduceHero = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    hero.style.setProperty("--hero-czas", CZAS / 1000 + "s");
+  if (slajdy.length > 1 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var CZAS = 6000, akt = 0, timer = null;
     /* kolejne zdjęcia pobieramy dopiero po załadowaniu strony */
     var doladuj = function () {
       hero.querySelectorAll("[data-srcset]").forEach(function (el) { el.srcset = el.getAttribute("data-srcset"); el.removeAttribute("data-srcset"); });
       hero.querySelectorAll("img[data-src]").forEach(function (el) { el.src = el.getAttribute("data-src"); el.removeAttribute("data-src"); });
     };
     var gotowe = function (i) { var im = slajdy[i].querySelector("img"); return im.complete && im.naturalWidth > 0; };
-    var pokaz = function (i) {
-      slajdy[akt].classList.remove("is-aktywny");
-      przyciski[akt].removeAttribute("aria-current");
-      akt = i;
-      slajdy[akt].classList.add("is-aktywny");
-      przyciski[akt].setAttribute("aria-current", "true");
-      /* restart paska postępu pod nazwą sali */
-      hero.classList.remove("is-gra"); void hero.offsetWidth;
-      if (timer) hero.classList.add("is-gra");
-    };
     var start = function () {
-      if (reduceHero || pauza || timer) return;
-      hero.classList.add("is-gra");
+      if (timer) return;
       timer = setInterval(function () {
         var nast = (akt + 1) % slajdy.length;
-        if (gotowe(nast)) pokaz(nast);
+        if (!gotowe(nast)) return;
+        slajdy[akt].classList.remove("is-aktywny");
+        akt = nast;
+        slajdy[akt].classList.add("is-aktywny");
       }, CZAS);
     };
-    var stop = function () { clearInterval(timer); timer = null; hero.classList.remove("is-gra"); };
-    przyciski.forEach(function (b) {
-      b.addEventListener("click", function () { doladuj(); pauza = true; stop(); pokaz(+b.getAttribute("data-slajd")); });
-    });
+    var stop = function () { clearInterval(timer); timer = null; };
     document.addEventListener("visibilitychange", function () { if (document.hidden) stop(); else start(); });
     if (document.readyState === "complete") { doladuj(); start(); }
     else window.addEventListener("load", function () { doladuj(); start(); });
@@ -152,6 +138,36 @@
     } else {
       slots.forEach(mount);
     }
+  }
+
+  /* ---------- karuzele na telefonie: kropki pokazujące pozycję ---------- */
+  if (window.matchMedia("(max-width: 699px)").matches) {
+    document.querySelectorAll(".opinie, .dyscypliny").forEach(function (tor, n) {
+      var el = Array.prototype.slice.call(tor.children);
+      if (el.length < 2) return;
+      var kropki = document.createElement("div");
+      kropki.className = "kropki";
+      var btns = el.map(function (item, i) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.setAttribute("aria-label", "Pokaż " + (i + 1) + " z " + el.length);
+        b.addEventListener("click", function () {
+          tor.scrollTo({ left: item.offsetLeft - tor.offsetLeft - parseFloat(getComputedStyle(tor).paddingLeft), behavior: "smooth" });
+        });
+        kropki.appendChild(b);
+        return b;
+      });
+      tor.after(kropki);
+      var ustaw = function () {
+        var start = tor.getBoundingClientRect().left + parseFloat(getComputedStyle(tor).paddingLeft);
+        var best = 0, bestD = Infinity;
+        el.forEach(function (item, i) { var d = Math.abs(item.getBoundingClientRect().left - start); if (d < bestD) { bestD = d; best = i; } });
+        btns.forEach(function (b, i) { if (i === best) b.setAttribute("aria-current", "true"); else b.removeAttribute("aria-current"); });
+      };
+      var raf = 0;
+      tor.addEventListener("scroll", function () { cancelAnimationFrame(raf); raf = requestAnimationFrame(ustaw); }, { passive: true });
+      ustaw();
+    });
   }
 
   /* ---------- nagranie na pełnym ekranie ---------- */
