@@ -173,14 +173,14 @@ button { font: inherit; color: inherit; }
 .prose li { margin-bottom: var(--s-2); }
 .prose li::marker { color: var(--neon); }
 .sekcja--beton .prose li::marker { color: var(--neon-ciemny); }
-.prose a, .link {
+.prose a:not(.btn), .link {
   color: var(--neon);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
-.sekcja--beton .prose a, .sekcja--beton .link { color: var(--neon-ciemny); }
-.prose a:hover, .link:hover { text-decoration-thickness: 2px; }
+.sekcja--beton .prose a:not(.btn), .sekcja--beton .link { color: var(--neon-ciemny); }
+.prose a:not(.btn):hover, .link:hover { text-decoration-thickness: 2px; }
 .prose strong { color: var(--tekst); font-weight: 600; }
 .sekcja--beton .prose strong { color: var(--atrament); }
 
