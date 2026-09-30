@@ -1,0 +1,37 @@
+{
+  "brak": "Brak zajęć w Fight Zone",
+  "od": "1 września 2026",
+  "plakat": "grafik-fight-zone.webp",
+  "kategorie": {
+    "kickboxing": {"nazwa": "Kickboxing", "url": "/kickboxing-jaroslaw/"},
+    "boks": {"nazwa": "Boks", "url": "/boks-jaroslaw/"},
+    "mma": {"nazwa": "MMA", "url": "/mma-jaroslaw/"},
+    "jujitsu": {"nazwa": "Ju-jitsu (SSW Cobra)", "url": "/mma-jaroslaw/#ju-jitsu-i-samoobrona"},
+    "samoobrona": {"nazwa": "Samoobrona / Krav Maga", "url": "/mma-jaroslaw/#ju-jitsu-i-samoobrona"},
+    "start": {"nazwa": "Trening wprowadzający", "url": "/grafik/#trening-wprowadzajacy"}
+  },
+  "zajecia": [
+    {"dzien": 1, "od": "16:00", "do": "16:45", "nazwa": "Kickboxing Kids", "k": "kickboxing", "info": "4–6 lat"},
+    {"dzien": 1, "od": "17:00", "do": "17:45", "nazwa": "Kickboxing Start", "k": "kickboxing", "info": "7–10 lat"},
+    {"dzien": 1, "od": "17:45", "do": "18:45", "nazwa": "Kickboxing Junior", "k": "kickboxing", "info": "14–18 lat"},
+    {"dzien": 1, "od": "18:45", "do": "20:00", "nazwa": "Kickboxing Fight Team", "k": "kickboxing", "info": "grupa zawodnicza"},
+    {"dzien": 1, "od": "20:00", "do": "21:15", "nazwa": "Kickboxing dorośli", "k": "kickboxing", "info": "dorośli"},
+    {"dzien": 2, "od": "16:00", "do": "17:00", "nazwa": "Kickboxing Kadet", "k": "kickboxing", "info": "10–13 lat"},
+    {"dzien": 2, "od": "17:00", "do": "19:00", "nazwa": "SSW Cobra Ju-Jitsu", "k": "jujitsu", "info": ""},
+    {"dzien": 2, "od": "19:00", "do": "20:15", "nazwa": "Boks", "k": "boks", "info": ""},
+    {"dzien": 2, "od": "20:15", "do": "21:15", "nazwa": "Samoobrona / Krav Maga", "k": "samoobrona", "info": ""},
+    {"dzien": 3, "od": "16:00", "do": "16:45", "nazwa": "Kickboxing Kids", "k": "kickboxing", "info": "4–6 lat"},
+    {"dzien": 3, "od": "17:00", "do": "17:45", "nazwa": "Kickboxing Start", "k": "kickboxing", "info": "7–10 lat"},
+    {"dzien": 3, "od": "17:45", "do": "18:45", "nazwa": "Kickboxing Junior", "k": "kickboxing", "info": "14–18 lat"},
+    {"dzien": 3, "od": "18:45", "do": "20:00", "nazwa": "Kickboxing Fight Team", "k": "kickboxing", "info": "grupa zawodnicza"},
+    {"dzien": 3, "od": "20:00", "do": "21:15", "nazwa": "Kickboxing dorośli", "k": "kickboxing", "info": "dorośli"},
+    {"dzien": 4, "od": "16:00", "do": "17:00", "nazwa": "Kickboxing Kadet", "k": "kickboxing", "info": "10–13 lat"},
+    {"dzien": 4, "od": "17:00", "do": "19:00", "nazwa": "SSW Cobra Ju-Jitsu", "k": "jujitsu", "info": ""},
+    {"dzien": 4, "od": "19:00", "do": "20:15", "nazwa": "Boks", "k": "boks", "info": ""},
+    {"dzien": 4, "od": "20:15", "do": "21:15", "nazwa": "Samoobrona / Krav Maga", "k": "samoobrona", "info": ""},
+    {"dzien": 5, "od": "17:30", "do": "18:30", "nazwa": "Trening wprowadzający dla nowych", "k": "start", "info": ""},
+    {"dzien": 5, "od": "18:30", "do": "20:00", "nazwa": "Kickboxing Fight Team: sparingi", "k": "kickboxing", "info": "grupa zawodnicza"},
+    {"dzien": 5, "od": "20:00", "do": "21:00", "nazwa": "MMA", "k": "mma", "info": ""},
+    {"dzien": 6, "od": "12:00", "do": "13:00", "nazwa": "MMA", "k": "mma", "info": ""}
+  ]
+}

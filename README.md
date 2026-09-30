@@ -6,40 +6,59 @@ Bez frameworków i bibliotek JS. Czysty HTML + jeden plik CSS + ~6 KB JS.
 ## Struktura
 
 ```
-index.html                 strona główna
-silownia-jaroslaw/         /silownia-jaroslaw/
-boks-jaroslaw/             /boks-jaroslaw/
-kickboxing-jaroslaw/       /kickboxing-jaroslaw/
-mma-jaroslaw/              /mma-jaroslaw/
-fitness-jaroslaw/          /fitness-jaroslaw/
-grafik/  cennik/  trenerzy/  kontakt/
-404.html  sitemap.xml  robots.txt  site.webmanifest  favicon.*
-assets/css  assets/js  assets/fonts  assets/img  assets/brand  assets/og
+index.html, <slug>/index.html   strony (GENEROWANE, nie edytuj ręcznie)
+404.html  sitemap.xml  robots.txt   (generowane)
+site.webmanifest  favicon.*  apple-touch-icon.png
 
-_build.py                  generator (dane firmy, grafik, nawigacja, schema, SEO)
-_src/pages/*.html          treść podstron
-_src/styles.css            style (build dokleja @font-face i zapisuje do assets/css)
-_DO-UZUPELNIENIA.md        lista brakujących danych (generowana przy buildzie)
+assets/                  wszystko, co publikowane i linkowane ze stron
+  css/                   styles.css (generowany z _src/css)
+  js/                    main.js
+  fonts/                 woff2
+  img/                   zdjęcia AVIF + WebP w kilku szerokościach, img/trenerzy/
+  video/                 nagrania MP4 gotowe na stronę
+  plakaty/               plakaty grafików do pobrania (webp)
+  brand/                 logo, ikony PWA
+  og/                    obraz podglądu w social media
+
+_build.py                generator (dane firmy, nawigacja, SEO, schema, komponenty)
+_src/                    źródła (nie są publikowane)
+  pages/                 treść podstron (*.html) + opcjonalne *.schema.json
+  css/                   styles.css, fontface.css
+  dane/                  grafik-fight-zone.json, grafik-fitness.json, obrazy.json
+  oryginaly/             surowe pliki przed obróbką
+    zdjecia/             zdjęcia w pełnej jakości
+    filmy/               nagrania z TikToka (INDEKS.md: nazwa pliku -> oryginalny podpis)
+    plakaty/             oryginalne grafiki plakatów (PNG)
+_docs/                   DO-UZUPELNIENIA.md (generowany), notatki
 ```
 
 Pliki i foldery z `_` na początku nie są publikowane przez GitHub Pages (Jekyll je pomija).
+Zasada: oryginał trafia do `_src/oryginaly/<typ>/`, wersja na stronę do `assets/<typ>/` pod tą samą nazwą.
 
 ## Edycja
 
-1. Treść zmieniasz w `_src/pages/<strona>.html`, dane firmy, godziny i grafik w `_build.py`.
+1. Treść zmieniasz w `_src/pages/<strona>.html`, grafiki w `_src/dane/grafik-*.json`, dane firmy i godziny otwarcia w `_build.py`.
 2. Uruchom `python3 _build.py`.
 3. Podgląd lokalny: `python3 -m http.server` i otwórz http://localhost:8000
 
 Nie edytuj wygenerowanych `index.html` ręcznie, build je nadpisze.
 
 Znaczniki w `_src/pages`: `{{img name="..." alt="..." sizes="..."}}`, `{{grafik_tabela d="boks"}}`,
-`{{grafik_tydzien}}`, `{{wideo key="..." poster="..."}}`, `{{faq}} ? pytanie / odpowiedź {{/faq}}`,
-`{{cta}}`, `{{godziny}}`, `{{tel}}` itd. Linki wewnętrzne pisz jako `~/slug/`, build zamieni je na ścieżki względne.
+`{{grafik_tydzien g="fitness"}}`, `{{legenda g="fitness"}}`, `{{terminy g="fitness" d="pilates"}}`,
+`{{grafik_od g="..."}}`, `{{plakat g="..."}}`, `{{wideo key="..." poster="..."}}`,
+`{{faq}} ? pytanie / odpowiedź {{/faq}}`, `{{cta}}`, `{{godziny}}`, `{{tel}}` itd.
+`g` to nazwa grafiku (`fight-zone` domyślnie albo `fitness`). Linki wewnętrzne pisz jako `~/slug/`, build zamieni je na ścieżki względne.
 
-## Grafik
+## Grafiki
 
-Grafik Fight Zone jest w `_build.py` (lista `GRAFIK`). Po zmianie buildu aktualizują się naraz:
-strona /grafik, tabele na stronach dyscyplin i widżet „Dziś w Fight Zone” na stronie głównej.
+Dwa grafiki, każdy w osobnym pliku JSON w `_src/dane/`:
+
+- `grafik-fight-zone.json`: strona /grafik, tabele na stronach dyscyplin, widżet „Dziś w Fight Zone” na stronie głównej.
+- `grafik-fitness.json`: grafik na /fitness-jaroslaw i /grafik oraz terminy w kartach zajęć.
+
+Jedno zajęcie w linii: `{"dzien": 1-7, "od": "19:00", "do": "" (puste, gdy znany tylko początek), "nazwa": "...", "k": "<klucz kategorii>", "info": "..."}`.
+Nowa kategoria: dopisz ją w `"kategorie"` i nadaj kolor w `_src/css/styles.css` (`[data-d="<klucz>"] { --kolor: ... }`).
+Nowy plakat: oryginał do `_src/oryginaly/plakaty/`, wersję webp (`cwebp -q 82`) do `assets/plakaty/`, nazwę pliku wpisz w `"plakat"`.
 
 ## Nagrania wideo
 
@@ -62,7 +81,7 @@ i obraz podglądu w social media `assets/og/og-v3klub.jpg` (nie każda platforma
 ## Przed publikacją
 
 1. Ustaw docelową domenę w `_build.py` (`SITE_URL`) i uruchom build: od niej zależą canonical, sitemap, OG i schema.
-2. Uzupełnij dane z `_DO-UZUPELNIENIA.md` (ceny, grafik fitness, Facebook/Instagram, zasady samoobsługi).
+2. Uzupełnij dane z `_docs/DO-UZUPELNIENIA.md` (ceny, prowadzący fitness, Facebook/Instagram, zasady samoobsługi).
 3. Hosting: GitHub Pages, Netlify, Cloudflare Pages lub dowolny serwer statyczny. Adresy podstron kończą się `/`.
 
 ## Google Search Console

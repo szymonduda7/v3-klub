@@ -102,7 +102,7 @@
       t.textContent = fmt(z.od) + "–" + fmt(z.do);
       var name = document.createElement(z.url ? "a" : "span");
       if (z.url) name.href = z.url;
-      name.textContent = z.nazwa + (z.grupa ? " · " + z.grupa : "");
+      name.textContent = z.nazwa + (z.info ? " · " + z.info : "");
       li.appendChild(t); li.appendChild(name);
       list.appendChild(li);
     });

@@ -3,16 +3,16 @@
     {{crumbs}}
     <div class="page-hero__grid">
       <div>
-        <h1 class="h1">Fitness w Jarosławiu: <span class="neon neon--zaplon">pilates, joga, zumba</span></h1>
-        <p class="lead">Zajęcia grupowe w sali fitness V3 Klub: od spokojnego pilatesu i jogi, przez zumbę i step, po aeroboxing. Osobno zajęcia na zdrowy kręgosłup i gimnastyka korekcyjna prowadzone przez rehabilitanta.</p>
+        <h1 class="h1">Fitness w Jarosławiu: <span class="neon neon--zaplon">pilates, joga, step</span></h1>
+        <p class="lead">Zajęcia grupowe w sali fitness V3 Klub od poniedziałku do soboty. Od spokojnej jogi i pilatesu, przez mobility, po dynamiczny step i treningi Booty Project oraz Full Body Project. Osobno zajęcia na zdrowy kręgosłup prowadzone przez rehabilitanta.</p>
         <ul class="kluczowe">
-          <li>{{ikona users}}<span>Pilates, joga, zumba, step, aeroboxing, tabata, Booty Project, zdrowy kręgosłup, gimnastyka korekcyjna</span></li>
+          <li>{{ikona users}}<span>V3 Step Up!, pilates, joga, V3 Mobility, Booty Project, Full Body Project, Zdrowe Ciało, Zdrowy Kręgosłup</span></li>
+          <li>{{ikona calendar}}<span>Od poniedziałku do piątku wieczorem, w sobotę rano</span></li>
           <li>{{ikona pin}}<span>Sala fitness, {{ulica}}, {{miasto}}</span></li>
-          <li>{{ikona clock}}<span>Klub czynny pn–pt {{godz 1}}, sob {{godz 6}}, nd {{godz 7}}</span></li>
         </ul>
         <div class="btn-rzad">
           <a class="btn btn--neon" href="{{tel_href}}">{{ikona phone}}Zapisz się: {{tel}}</a>
-          <a class="btn btn--obrys" href="#zajecia">Rodzaje zajęć</a>
+          <a class="btn btn--obrys" href="#grafik-fitness">{{ikona calendar}}Grafik fitness</a>
         </div>
       </div>
       <div class="page-hero__foto ramka">
@@ -22,78 +22,100 @@
   </div>
 </section>
 
-<section class="sekcja" id="zajecia" aria-labelledby="zajecia-h">
+<section class="sekcja" id="grafik-fitness" aria-labelledby="grafik-f-h">
+  <div class="wrap">
+    <div class="sekcja__naglowek">
+      <h2 class="h2" id="grafik-f-h">Grafik fitness</h2>
+      <p>Obowiązuje od {{grafik_od g="fitness"}}. Dzisiejszy dzień jest podświetlony, a nazwa zajęć prowadzi do ich opisu.</p>
+    </div>
+    {{legenda g="fitness"}}
+    {{grafik_tydzien g="fitness"}}
+    <div class="btn-rzad mt-6">
+      <a class="btn btn--obrys" href="{{plakat g="fitness"}}" download>{{ikona download}}Pobierz plakat z grafikiem</a>
+      <a class="btn btn--obrys" href="~/grafik/">{{ikona calendar}}Grafik Fight Zone</a>
+    </div>
+    <!-- TODO: czy na zajęcia fitness trzeba się zapisywać (w aplikacji / w recepcji) i czy jest limit miejsc -->
+    <!-- TODO: godziny zakończenia zajęć (plakat podaje tylko początek, poza V3 Mobility i sobotą) -->
+  </div>
+</section>
+
+<section class="sekcja sekcja--podniesiona" id="zajecia" aria-labelledby="zajecia-h">
   <div class="wrap">
     <div class="sekcja__naglowek">
       <h2 class="h2" id="zajecia-h">Zajęcia fitness w V3</h2>
-      <p>Każde zajęcia mają inny cel. Poniżej krótko, czego się spodziewać i dla kogo są.</p>
+      <p>Każde zajęcia mają inny cel. Poniżej krótko, czego się spodziewać, i kiedy są w grafiku.</p>
     </div>
-    <div class="cechy cechy--3">
+    <div class="cechy cechy--4">
+      <article class="cecha" id="step-up">
+        <h3 class="h3">V3 Step Up!</h3>
+        <p>Choreografia na stopniu w rytm muzyki. Trening kondycyjny, który mocno pracuje nogami i pośladkami.</p>
+        <p class="cecha__terminy" data-d="step-up"><span class="tag" aria-hidden="true"></span><span><span class="sr-only">Terminy: </span>{{terminy g="fitness" d="step-up"}}</span></p>
+        <p><span class="todo">do uzupełnienia: prowadząca / prowadzący</span></p>
+        <!-- TODO: potwierdzić z klubem opis V3 Step Up! (czy to klasyczny step fitness) -->
+      </article>
       <article class="cecha" id="pilates">
         <h3 class="h3">Pilates</h3>
         <p>Wolne, dokładne ćwiczenia na macie, które wzmacniają mięśnie brzucha, pleców i pośladków. Dobre przy siedzącej pracy i na start po przerwie.</p>
-        <p><strong>Prowadzi:</strong> Zuza <!-- TODO: potwierdzić imię i nazwisko instruktorki pilatesu (w opiniach Google: Zuza / Zuzia) --></p>
+        <p class="cecha__terminy" data-d="pilates"><span class="tag" aria-hidden="true"></span><span><span class="sr-only">Terminy: </span>{{terminy g="fitness" d="pilates"}}</span></p>
+        <p><strong>Prowadzi:</strong> Zuza</p>
+        <!-- TODO: potwierdzić imię i nazwisko instruktorki pilatesu (w opiniach Google: Zuza / Zuzia) -->
       </article>
       <article class="cecha" id="joga">
         <h3 class="h3">Joga</h3>
         <p>Pozycje rozciągające i wzmacniające połączone z oddechem. Poprawia zakres ruchu i pomaga się wyciszyć po pracy.</p>
+        <p class="cecha__terminy" data-d="joga"><span class="tag" aria-hidden="true"></span><span><span class="sr-only">Terminy: </span>{{terminy g="fitness" d="joga"}}</span></p>
         <p><span class="todo">do uzupełnienia: prowadząca / prowadzący</span></p>
       </article>
-      <article class="cecha" id="zumba">
-        <h3 class="h3">Zumba</h3>
-        <p>Trening taneczny do muzyki latynoskiej i popularnej. Dużo ruchu, proste kroki, nie trzeba umieć tańczyć.</p>
+      <article class="cecha" id="mobility">
+        <h3 class="h3">V3 Mobility</h3>
+        <p>45 minut pracy nad zakresem ruchu w stawach: rozciąganie, mobilizacja i kontrola ciała. W piątek zajęcia odbywają się w sali Fight Zone.</p>
+        <p class="cecha__terminy" data-d="mobility"><span class="tag" aria-hidden="true"></span><span><span class="sr-only">Terminy: </span>{{terminy g="fitness" d="mobility"}}</span></p>
         <p><span class="todo">do uzupełnienia: prowadząca / prowadzący</span></p>
-      </article>
-      <article class="cecha" id="step">
-        <h3 class="h3">Step fitness</h3>
-        <p>Choreografia na stopniu w rytm muzyki. Trening kondycyjny, który mocno pracuje nogami i pośladkami.</p>
-        <p><span class="todo">do uzupełnienia: prowadząca / prowadzący</span></p>
-      </article>
-      <article class="cecha" id="aeroboxing">
-        <h3 class="h3">Aeroboxing</h3>
-        <p>Ciosy i kopnięcia z kickboxingu w formie treningu do muzyki, bez kontaktu z partnerem. Dla osób, które chcą spróbować sportów walki bez walki.</p>
-        <p><strong>Prowadzi:</strong> <a class="link" href="~/trenerzy/#julia">Julia</a>, instruktorka taekwondo i zawodniczka kickboxingu</p>
-      </article>
-      <article class="cecha" id="zdrowy-kregoslup">
-        <h3 class="h3">Zdrowy kręgosłup i gimnastyka korekcyjna</h3>
-        <p>Zajęcia Akademii Zdrowia V3 Klub. Ćwiczenia wzmacniające mięśnie posturalne i korygujące wady postawy.</p>
-        <p><strong>Prowadzi:</strong> <a class="link" href="~/trenerzy/#jacek">Jacek</a>, absolwent wychowania fizycznego i rehabilitacji, rehabilitant</p>
-      </article>
-      <article class="cecha" id="tabata">
-        <h3 class="h3">Tabata</h3>
-        <p>Krótkie, intensywne interwały: 20 sekund pracy, 10 sekund przerwy. Mocny zastrzyk energii w krótkim czasie.</p>
-        <p><span class="todo">do uzupełnienia: prowadząca / prowadzący</span></p>
+        <!-- TODO: potwierdzić z klubem opis V3 Mobility -->
       </article>
       <article class="cecha" id="booty-project">
         <h3 class="h3">Booty Project</h3>
         <p>Zajęcia nastawione na budowanie i wzmacnianie pośladków. Ćwiczenia na macie i stepie.</p>
+        <p class="cecha__terminy" data-d="booty-project"><span class="tag" aria-hidden="true"></span><span><span class="sr-only">Terminy: </span>{{terminy g="fitness" d="booty-project"}}</span></p>
         <p><span class="todo">do uzupełnienia: prowadząca / prowadzący</span></p>
       </article>
+      <article class="cecha" id="full-body">
+        <h3 class="h3">Full Body Project</h3>
+        <p>Trening całego ciała w jednej sesji: nogi, pośladki, plecy, ramiona i brzuch.</p>
+        <p class="cecha__terminy" data-d="full-body"><span class="tag" aria-hidden="true"></span><span><span class="sr-only">Terminy: </span>{{terminy g="fitness" d="full-body"}}</span></p>
+        <p><span class="todo">do uzupełnienia: prowadząca / prowadzący</span></p>
+        <!-- TODO: potwierdzić z klubem opis Full Body Project -->
+      </article>
+      <article class="cecha" id="zdrowe-cialo">
+        <h3 class="h3">Zdrowe Ciało</h3>
+        <p>Ćwiczenia ogólnorozwojowe w umiarkowanym tempie, które wzmacniają całe ciało i poprawiają sprawność na co dzień.</p>
+        <p class="cecha__terminy" data-d="zdrowe-cialo"><span class="tag" aria-hidden="true"></span><span><span class="sr-only">Terminy: </span>{{terminy g="fitness" d="zdrowe-cialo"}}</span></p>
+        <p><span class="todo">do uzupełnienia: prowadząca / prowadzący</span></p>
+        <!-- TODO: potwierdzić z klubem, czym są zajęcia Zdrowe Ciało i czym różnią się od Zdrowego Kręgosłupa -->
+      </article>
+      <article class="cecha" id="zdrowy-kregoslup">
+        <h3 class="h3">Zdrowy Kręgosłup</h3>
+        <p>Zajęcia Akademii Zdrowia V3 Klub. Ćwiczenia wzmacniające mięśnie posturalne i korygujące wady postawy.</p>
+        <p class="cecha__terminy" data-d="zdrowy-kregoslup"><span class="tag" aria-hidden="true"></span><span><span class="sr-only">Terminy: </span>{{terminy g="fitness" d="zdrowy-kregoslup"}}</span></p>
+        <p><strong>Prowadzi:</strong> <a class="link" href="~/trenerzy/#jacek">Jacek</a>, absolwent wychowania fizycznego i rehabilitacji, rehabilitant</p>
+        <!-- TODO: potwierdzić, czy Jacek prowadzi też sobotnie zajęcia Zdrowy Kręgosłup -->
+      </article>
     </div>
-    <!-- TODO: czy są też inne zajęcia fitness (np. stretching, trening obwodowy)? Jeśli tak, dopisać kartę -->
   </div>
 </section>
 
-<section class="sekcja sekcja--podniesiona" id="grafik-fitness" aria-labelledby="grafik-f-h">
+<section class="sekcja" aria-labelledby="wideo-f-h">
   <div class="wrap">
-    <div class="split">
-      <div class="prose">
-        <h2 class="h2" id="grafik-f-h">Kiedy są zajęcia</h2>
-        <p class="mt-5"><span class="todo">do uzupełnienia: grafik zajęć fitness (dzień, godzina, zajęcia, prowadząca)</span></p>
-        <p>Do czasu publikacji grafiku godziny zajęć fitness sprawdzisz w recepcji albo pod numerem <a href="{{tel_href}}">{{tel}}</a>.</p>
-        <!-- TODO: czy na zajęcia fitness trzeba się zapisywać (w aplikacji / w recepcji) i czy jest limit miejsc -->
-        <p>Grafik sali sportów walki jest na stronie <a href="~/grafik/">grafiku zajęć</a>.</p>
-      </div>
-      <div class="wideo-para wideo-para--3">
-        {{wideo key="fitness" src="~/assets/video/fitness-grupa.mp4" poster="wideo-fitness-grupa" tytul="Zajęcia grupowe" opis="Sala fitness V3"}}
-        {{wideo key="fitness-tabata" src="~/assets/video/fitness-tabata.mp4" poster="wideo-fitness-tabata" tytul="Tabata" opis="Krótkie, intensywne interwały"}}
-        {{wideo key="fitness-booty-project" src="~/assets/video/fitness-booty-project.mp4" poster="wideo-fitness-booty-project" tytul="Booty Project" opis="Trening pośladków"}}
-      </div>
+    <h2 class="h2" id="wideo-f-h">Z sali fitness</h2>
+    <div class="wideo-para wideo-para--3 mt-6">
+      {{wideo key="fitness" src="~/assets/video/fitness-grupa.mp4" poster="wideo-fitness-grupa" tytul="Zajęcia grupowe" opis="Sala fitness V3"}}
+      {{wideo key="fitness-tabata" src="~/assets/video/fitness-tabata.mp4" poster="wideo-fitness-tabata" tytul="Trening interwałowy" opis="Krótko i intensywnie"}}
+      {{wideo key="fitness-booty-project" src="~/assets/video/fitness-booty-project.mp4" poster="wideo-fitness-booty-project" tytul="Booty Project" opis="Trening pośladków"}}
     </div>
   </div>
 </section>
 
-<section class="sekcja" aria-labelledby="instr-h">
+<section class="sekcja sekcja--podniesiona" aria-labelledby="instr-h">
   <div class="wrap">
     <div class="split split--srodek">
       <div class="prose">
@@ -128,10 +150,13 @@
     <div class="mt-6">
 {{faq}}
 ? Jakie zajęcia fitness są w V3 Klub w Jarosławiu?
-Pilates, joga, zumba, step fitness, aeroboxing oraz zajęcia na zdrowy kręgosłup i gimnastyka korekcyjna.
+V3 Step Up!, pilates, joga, V3 Mobility, Booty Project, Full Body Project, Zdrowe Ciało i Zdrowy Kręgosłup. Aktualne godziny są w <a href="#grafik-fitness">grafiku fitness</a>.
 
 ? Czy zajęcia fitness są dla początkujących?
-Tak. Najłagodniejszy start to pilates, joga albo zdrowy kręgosłup. Zumba i step są bardziej dynamiczne, ale kroki są proste.
+Tak. Najłagodniejszy start to pilates, joga, V3 Mobility albo Zdrowy Kręgosłup. V3 Step Up! jest bardziej dynamiczny, ale kroki są proste.
+
+? Kiedy są zajęcia fitness?
+Od poniedziałku do piątku wieczorem oraz w sobotę rano. Dokładne godziny na każdy dzień są w <a href="#grafik-fitness">grafiku fitness</a>.
 
 ? Czym różni się pilates od jogi?
 Pilates skupia się na wzmacnianiu mięśni głębokich, zwłaszcza brzucha i pleców. Joga więcej czasu poświęca rozciąganiu, równowadze i oddechowi. Obie formy dobrze się uzupełniają.
@@ -151,7 +176,7 @@ Wygodny strój sportowy, wodę i ręcznik. Na miejscu są szatnie z prysznicami.
     <h2 class="h2" id="dalej-f-h">Sprawdź też</h2>
     <nav class="powiazane powiazane--4 mt-6" aria-labelledby="dalej-f-h">
       <a href="~/silownia-jaroslaw/"><strong>Siłownia</strong><span>Czynna od 5:00 do północy</span></a>
-      <a href="~/kickboxing-jaroslaw/"><strong>Kickboxing</strong><span>Jeśli aeroboxing to za mało</span></a>
+      <a href="~/kickboxing-jaroslaw/"><strong>Kickboxing</strong><span>Grupy od 4 lat do dorosłych</span></a>
       <a href="~/cennik/"><strong>Cennik</strong><span>Karnety i wejścia na zajęcia</span></a>
       <a href="~/kontakt/"><strong>Kontakt</strong><span>Adres, telefon, dojazd</span></a>
     </nav>

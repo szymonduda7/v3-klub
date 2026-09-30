@@ -3,12 +3,13 @@
 Generator statycznej strony V3 Klub.
 
 Treść podstron: _src/pages/<plik>.html (zwykły HTML + kilka znaczników {{...}}).
+Dane (grafiki, lista zdjęć): _src/dane/*.json. Style: _src/css/.
 Wspólne rzeczy (head, nagłówek, stopka, NAP, schema, breadcrumbs, grafik)
 są tutaj, żeby były identyczne na każdej podstronie.
 
 Uruchom:  python3 _build.py
 Wynik:    index.html, <slug>/index.html, sitemap.xml, robots.txt, 404.html,
-          assets/css/styles.css, _DO-UZUPELNIENIA.md
+          assets/css/styles.css, _docs/DO-UZUPELNIENIA.md
 """
 import hashlib
 import html
@@ -19,6 +20,7 @@ from datetime import date
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, "_src")
+DANE = os.path.join(SRC, "dane")
 
 # ============================================================
 # KONFIGURACJA: dane firmy (NAP spójny z profilem Google)
@@ -52,38 +54,17 @@ DNI = ["", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota",
 DNI_EN = ["", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
 # ============================================================
-# GRAFIK FIGHT ZONE (obowiązuje od 1 września 2026)
+# GRAFIKI: _src/dane/grafik-<nazwa>.json
 # ============================================================
-GRAFIK_OD = "1 września 2026"
-DYSCYPLINY = {
-    "kickboxing": ("Kickboxing", "/kickboxing-jaroslaw/"),
-    "boks": ("Boks", "/boks-jaroslaw/"),
-    "mma": ("MMA", "/mma-jaroslaw/"),
-    "jujitsu": ("Ju-jitsu (SSW Cobra)", "/mma-jaroslaw/#ju-jitsu-i-samoobrona"),
-    "samoobrona": ("Samoobrona / Krav Maga", "/mma-jaroslaw/#ju-jitsu-i-samoobrona"),
-    "start": ("Trening wprowadzający", "/grafik/#trening-wprowadzajacy"),
+# Każdy plik: "od" (od kiedy obowiązuje), "brak" (tekst dla dnia bez zajęć),
+# "plakat" (plik w assets/plakaty/), "kategorie" (klucz: nazwa + link, kolor w CSS
+# przez [data-d="klucz"]) i "zajecia" (dzien 1-7, od, do, nazwa, k = kategoria, info).
+# "do" może być puste, jeśli grafik podaje tylko godzinę rozpoczęcia.
+GRAFIKI = {
+    n: json.load(open(os.path.join(DANE, f"grafik-{n}.json")))
+    for n in ("fight-zone", "fitness")
 }
-def _z(dzien, od, do, nazwa, d, grupa=""):
-    return {"dzien": dzien, "od": od, "do": do, "nazwa": nazwa, "d": d, "grupa": grupa}
-_pn_sr = lambda dz: [
-    _z(dz, "16:00", "16:45", "Kickboxing Kids", "kickboxing", "4–6 lat"),
-    _z(dz, "17:00", "17:45", "Kickboxing Start", "kickboxing", "7–10 lat"),
-    _z(dz, "17:45", "18:45", "Kickboxing Junior", "kickboxing", "14–18 lat"),
-    _z(dz, "18:45", "20:00", "Kickboxing Fight Team", "kickboxing", "grupa zawodnicza"),
-    _z(dz, "20:00", "21:15", "Kickboxing dorośli", "kickboxing", "dorośli"),
-]
-_wt_cz = lambda dz: [
-    _z(dz, "16:00", "17:00", "Kickboxing Kadet", "kickboxing", "10–13 lat"),
-    _z(dz, "17:00", "19:00", "SSW Cobra Ju-Jitsu", "jujitsu"),
-    _z(dz, "19:00", "20:15", "Boks", "boks"),
-    _z(dz, "20:15", "21:15", "Samoobrona / Krav Maga", "samoobrona"),
-]
-GRAFIK = (_pn_sr(1) + _wt_cz(2) + _pn_sr(3) + _wt_cz(4) + [
-    _z(5, "17:30", "18:30", "Trening wprowadzający dla nowych", "start"),
-    _z(5, "18:30", "20:00", "Kickboxing Fight Team: sparingi", "kickboxing", "grupa zawodnicza"),
-    _z(5, "20:00", "21:00", "MMA", "mma"),
-    _z(6, "12:00", "13:00", "MMA", "mma"),
-])
+GRAFIK = GRAFIKI["fight-zone"]["zajecia"]  # widżet „Dziś w Fight Zone” na stronie głównej
 
 # ============================================================
 # NAWIGACJA I PODSTRONY
@@ -126,8 +107,8 @@ PAGES = [
          og="fight-zone-sala",
          service=("MMA", "Treningi MMA w Jarosławiu")),
     dict(slug="fitness-jaroslaw", src="fitness", crumb="Fitness", prio="0.8",
-         title="Fitness Jarosław | Pilates, joga, zumba, step w V3 Klub",
-         desc="Zajęcia fitness w Jarosławiu: pilates, joga, zumba, step, aeroboxing, zdrowy kręgosłup i gimnastyka korekcyjna. Sala fitness w V3 Klub, Poniatowskiego 24.",
+         title="Fitness Jarosław | Pilates, joga, step, grafik zajęć V3 Klub",
+         desc="Zajęcia fitness w Jarosławiu: pilates, joga, V3 Step Up!, V3 Mobility, Booty Project, Full Body Project i zdrowy kręgosłup. Grafik pn–sob, V3 Klub, Poniatowskiego 24.",
          og="zajecia-fitness-grupa",
          service=("Zajęcia fitness", "Zajęcia fitness w Jarosławiu")),
     dict(slug="grafik", src="grafik", crumb="Grafik zajęć", prio="0.8",
@@ -182,7 +163,7 @@ def ikona(name, cls=""):
 # ============================================================
 # OBRAZY
 # ============================================================
-MANIFEST = json.load(open(os.path.join(SRC, "images.json")))
+MANIFEST = json.load(open(os.path.join(DANE, "obrazy.json")))
 
 def img(name, alt, sizes="100vw", eager=False, cls="", pos=""):
     m = MANIFEST[name]
@@ -246,46 +227,54 @@ def tabela_godzin(cls="godziny"):
         for d in range(1, 8))
     return f'<table class="{cls}"><caption class="sr-only">Godziny otwarcia V3 Centrum Sportowe</caption><tbody>{rows}</tbody></table>'
 
-def zaj_link(z):
-    nazwa, url = DYSCYPLINY[z["d"]]
-    return url
+DNI_KROTKO = ["", "pn", "wt", "śr", "czw", "pt", "sob", "nd"]
 
-def grafik_tabela(dys):
-    keys = [k.strip() for k in dys.split(",")]
-    rows = [z for z in GRAFIK if z["d"] in keys]
+def czas(z):
+    return f'{fmt_h(z["od"])}–{fmt_h(z["do"])}' if z["do"] else fmt_h(z["od"])
+
+def grafik_tabela(g, kat):
+    keys = [k.strip() for k in kat.split(",")]
+    rows = [z for z in GRAFIKI[g]["zajecia"] if z["k"] in keys]
     body = ""
     for z in rows:
-        grupa = z["grupa"] or "wszyscy"
         body += (f'<tr><th scope="row">{DNI[z["dzien"]]}</th>'
-                 f'<td class="num">{fmt_h(z["od"])}–{fmt_h(z["do"])}</td>'
-                 f'<td>{z["nazwa"]}</td><td>{grupa}</td></tr>')
+                 f'<td class="num">{czas(z)}</td>'
+                 f'<td>{z["nazwa"]}</td><td>{z["info"] or "wszyscy"}</td></tr>')
     return ('<div class="tabela"><table><caption class="sr-only">Godziny zajęć</caption>'
             '<thead><tr><th scope="col">Dzień</th><th scope="col">Godzina</th><th scope="col">Zajęcia</th><th scope="col">Grupa</th></tr></thead>'
             f'<tbody>{body}</tbody></table></div>'
-            f'<p class="przypis">Grafik Fight Zone obowiązuje od {GRAFIK_OD}. Pełny tydzień: <a class="link" href="~/grafik/">grafik zajęć</a>.</p>')
+            f'<p class="przypis">Grafik Fight Zone obowiązuje od {GRAFIKI[g]["od"]}. Pełny tydzień: <a class="link" href="~/grafik/">grafik zajęć</a>.</p>')
 
-def grafik_tydzien():
+def grafik_tydzien(g):
+    G = GRAFIKI[g]
     out = '<div class="grafik-dni">'
     for d in range(1, 8):
-        zz = [z for z in GRAFIK if z["dzien"] == d]
-        out += f'<section class="dzien" data-dzien="{d}" aria-labelledby="dzien-{d}"><h3 id="dzien-{d}">{DNI[d]} <small>dziś</small></h3><ul>'
+        zz = [z for z in G["zajecia"] if z["dzien"] == d]
+        hid = f"{g}-dzien-{d}"
+        out += f'<section class="dzien" data-dzien="{d}" aria-labelledby="{hid}"><h3 id="{hid}">{DNI[d]} <small>dziś</small></h3><ul>'
         if not zz:
             out += (f'<li class="zajecia"><span class="zajecia__czas">cały dzień</span>'
-                    f'<span class="zajecia__nazwa"><span>Brak zajęć w Fight Zone<span class="zajecia__grupa">Siłownia czynna {godz_tekst(d)}</span></span></span></li>')
+                    f'<span class="zajecia__nazwa"><span>{G["brak"]}<span class="zajecia__grupa">Siłownia czynna {godz_tekst(d)}</span></span></span></li>')
         for z in zz:
-            url = DYSCYPLINY[z["d"]][1]
-            grupa = f'<span class="zajecia__grupa">{z["grupa"]}</span>' if z["grupa"] else ""
-            out += (f'<li class="zajecia"><span class="zajecia__czas">{fmt_h(z["od"])}–{fmt_h(z["do"])}</span>'
-                    f'<span class="zajecia__nazwa" data-d="{z["d"]}"><span class="tag" aria-hidden="true"></span>'
-                    f'<span><a href="~{url}">{z["nazwa"]}</a>{grupa}</span></span></li>')
+            url = G["kategorie"][z["k"]]["url"]
+            info = f'<span class="zajecia__grupa">{z["info"]}</span>' if z["info"] else ""
+            out += (f'<li class="zajecia"><span class="zajecia__czas">{czas(z)}</span>'
+                    f'<span class="zajecia__nazwa" data-d="{z["k"]}"><span class="tag" aria-hidden="true"></span>'
+                    f'<span><a href="~{url}">{z["nazwa"]}</a>{info}</span></span></li>')
         out += "</ul></section>"
     return out + "</div>"
 
-def legenda():
+def legenda(g):
     items = "".join(
-        f'<li data-d="{k}"><span class="tag" aria-hidden="true"></span><a href="~{v[1]}">{v[0]}</a></li>'
-        for k, v in DYSCYPLINY.items())
-    return f'<ul class="legenda" aria-label="Dyscypliny">{items}</ul>'
+        f'<li data-d="{k}"><span class="tag" aria-hidden="true"></span><a href="~{v["url"]}">{v["nazwa"]}</a></li>'
+        for k, v in GRAFIKI[g]["kategorie"].items())
+    return f'<ul class="legenda" aria-label="Rodzaje zajęć">{items}</ul>'
+
+def terminy(g, kat):
+    """Krótka lista terminów jednej kategorii, np. „pn 20:00 · śr 20:00 · pt 18:00”."""
+    zz = [z for z in GRAFIKI[g]["zajecia"] if z["k"] == kat]
+    assert zz, f"brak zajęć {kat} w grafiku {g}"
+    return " · ".join(f'<span class="termin">{DNI_KROTKO[z["dzien"]]} {czas(z)}</span>' for z in zz)
 
 def wideo(attrs):
     key = attrs.get("key", "")
@@ -532,17 +521,22 @@ def render_body(raw, page, faq_acc):
         if tag == "crumbs": return crumbs(page)
         if tag == "godziny": return tabela_godzin()
         if tag == "godz": return godz_tekst(int(rest))
-        if tag == "grafik_tabela": return grafik_tabela(a["d"])
-        if tag == "grafik_tydzien": return grafik_tydzien()
-        if tag == "legenda": return legenda()
+        g = a.get("g", "fight-zone")
+        if tag == "grafik_tabela": return grafik_tabela(g, a["d"])
+        if tag == "grafik_tydzien": return grafik_tydzien(g)
+        if tag == "legenda": return legenda(g)
+        if tag == "terminy": return terminy(g, a["d"])
+        if tag == "grafik_od": return GRAFIKI[g]["od"]
+        if tag == "plakat": return f'~/assets/plakaty/{GRAFIKI[g]["plakat"]}'
         if tag == "wideo": return wideo(a)
         if tag == "hero_tlo": return hero_tlo()
         if tag == "cta": return cta(a)
         if tag == "dane_grafik":
-            data = {"zajecia": [dict(z, url="~" + DYSCYPLINY[z["d"]][1]) for z in GRAFIK]}
+            kat = GRAFIKI["fight-zone"]["kategorie"]
+            data = {"zajecia": [dict(z, url="~" + kat[z["k"]]["url"]) for z in GRAFIK]}
             return f'<script type="application/json" id="dane-grafik">{json.dumps(data, ensure_ascii=False, separators=(",", ":"))}</script>'
         simple = {"tel": TEL, "tel_href": f"tel:{TEL_E164}", "maps": MAPS, "maps_trasa": MAPS_TRASA,
-                  "maps_embed": MAPS_EMBED, "apka": APKA, "tiktok": TIKTOK, "grafik_od": GRAFIK_OD,
+                  "maps_embed": MAPS_EMBED, "apka": APKA, "tiktok": TIKTOK,
                   "ulica": ULICA, "kod": KOD, "miasto": MIASTO, "nazwa": NAZWA, "marka": MARKA}
         if tag in simple: return simple[tag]
         raise ValueError(f"Nieznany znacznik {{{{{tag}}}}} w {page['src']}")
@@ -563,7 +557,7 @@ def version(path):
 
 def build():
     # CSS: font-face + style
-    css = open(os.path.join(SRC, "fontface.css")).read() + "\n" + open(os.path.join(SRC, "styles.css")).read()
+    css = open(os.path.join(SRC, "css/fontface.css")).read() + "\n" + open(os.path.join(SRC, "css/styles.css")).read()
     os.makedirs(os.path.join(ROOT, "assets/css"), exist_ok=True)
     open(os.path.join(ROOT, "assets/css/styles.css"), "w").write(css)
     css_v = version(os.path.join(ROOT, "assets/css/styles.css"))
@@ -619,7 +613,7 @@ def build():
             cur = page["src"]
             lines += ["", f"## /{page['slug']}" if page["slug"] else "## / (strona główna)", ""]
         lines.append(f"- ({where}) {t}")
-    open(os.path.join(ROOT, "_DO-UZUPELNIENIA.md"), "w").write("\n".join(lines) + "\n")
+    open(os.path.join(ROOT, "_docs/DO-UZUPELNIENIA.md"), "w").write("\n".join(lines) + "\n")
     print(f"OK: {len(PAGES)} podstron + 404, braków do uzupełnienia: {len(todos)}")
 
 if __name__ == "__main__":

@@ -1,0 +1,33 @@
+{
+  "brak": "Brak zajęć fitness",
+  "od": "września 2026",
+  "plakat": "grafik-fitness.webp",
+  "kategorie": {
+    "step-up": {"nazwa": "V3 Step Up!", "url": "/fitness-jaroslaw/#step-up"},
+    "pilates": {"nazwa": "Pilates", "url": "/fitness-jaroslaw/#pilates"},
+    "joga": {"nazwa": "Joga", "url": "/fitness-jaroslaw/#joga"},
+    "mobility": {"nazwa": "V3 Mobility", "url": "/fitness-jaroslaw/#mobility"},
+    "booty-project": {"nazwa": "Booty Project", "url": "/fitness-jaroslaw/#booty-project"},
+    "full-body": {"nazwa": "Full Body Project", "url": "/fitness-jaroslaw/#full-body"},
+    "zdrowe-cialo": {"nazwa": "Zdrowe Ciało", "url": "/fitness-jaroslaw/#zdrowe-cialo"},
+    "zdrowy-kregoslup": {"nazwa": "Zdrowy Kręgosłup", "url": "/fitness-jaroslaw/#zdrowy-kregoslup"}
+  },
+  "zajecia": [
+    {"dzien": 1, "od": "19:00", "do": "", "nazwa": "V3 Step Up!", "k": "step-up", "info": ""},
+    {"dzien": 1, "od": "20:00", "do": "", "nazwa": "Pilates", "k": "pilates", "info": ""},
+    {"dzien": 2, "od": "17:00", "do": "", "nazwa": "Booty Project", "k": "booty-project", "info": ""},
+    {"dzien": 2, "od": "18:15", "do": "", "nazwa": "Zdrowe Ciało", "k": "zdrowe-cialo", "info": ""},
+    {"dzien": 2, "od": "19:15", "do": "", "nazwa": "Joga", "k": "joga", "info": ""},
+    {"dzien": 3, "od": "18:15", "do": "19:00", "nazwa": "V3 Mobility", "k": "mobility", "info": "45 minut"},
+    {"dzien": 3, "od": "19:00", "do": "", "nazwa": "V3 Step Up!", "k": "step-up", "info": ""},
+    {"dzien": 3, "od": "20:00", "do": "", "nazwa": "Pilates", "k": "pilates", "info": ""},
+    {"dzien": 4, "od": "17:00", "do": "", "nazwa": "Full Body Project", "k": "full-body", "info": ""},
+    {"dzien": 4, "od": "18:15", "do": "", "nazwa": "Zdrowy Kręgosłup", "k": "zdrowy-kregoslup", "info": ""},
+    {"dzien": 4, "od": "19:15", "do": "", "nazwa": "Joga", "k": "joga", "info": ""},
+    {"dzien": 5, "od": "18:00", "do": "", "nazwa": "Pilates", "k": "pilates", "info": ""},
+    {"dzien": 5, "od": "18:15", "do": "19:00", "nazwa": "V3 Mobility", "k": "mobility", "info": "45 minut, sala Fight Zone"},
+    {"dzien": 5, "od": "19:00", "do": "", "nazwa": "V3 Step Up!", "k": "step-up", "info": ""},
+    {"dzien": 6, "od": "08:30", "do": "09:30", "nazwa": "Joga", "k": "joga", "info": ""},
+    {"dzien": 6, "od": "09:30", "do": "10:30", "nazwa": "Zdrowy Kręgosłup", "k": "zdrowy-kregoslup", "info": ""}
+  ]
+}

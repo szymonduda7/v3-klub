@@ -49,15 +49,19 @@ Po uzupełnieniu treści usuń oznaczenie i uruchom `python3 _build.py`.
 - (na stronie) do uzupełnienia: prowadząca / prowadzący
 - (na stronie) do uzupełnienia: prowadząca / prowadzący
 - (na stronie) do uzupełnienia: prowadząca / prowadzący
-- (na stronie) do uzupełnienia: grafik zajęć fitness (dzień, godzina, zajęcia, prowadząca)
+- (na stronie) do uzupełnienia: prowadząca / prowadzący
 - (na stronie) do uzupełnienia: krótkie profile instruktorek fitness (zdjęcie, doświadczenie, prowadzone zajęcia)
-- (w kodzie) potwierdzić imię i nazwisko instruktorki pilatesu (w opiniach Google: Zuza / Zuzia)
-- (w kodzie) czy są też inne zajęcia fitness (np. stretching, trening obwodowy)? Jeśli tak, dopisać kartę
 - (w kodzie) czy na zajęcia fitness trzeba się zapisywać (w aplikacji / w recepcji) i czy jest limit miejsc
+- (w kodzie) godziny zakończenia zajęć (plakat podaje tylko początek, poza V3 Mobility i sobotą)
+- (w kodzie) potwierdzić z klubem opis V3 Step Up! (czy to klasyczny step fitness)
+- (w kodzie) potwierdzić imię i nazwisko instruktorki pilatesu (w opiniach Google: Zuza / Zuzia)
+- (w kodzie) potwierdzić z klubem opis V3 Mobility
+- (w kodzie) potwierdzić z klubem opis Full Body Project
+- (w kodzie) potwierdzić z klubem, czym są zajęcia Zdrowe Ciało i czym różnią się od Zdrowego Kręgosłupa
+- (w kodzie) potwierdzić, czy Jacek prowadzi też sobotnie zajęcia Zdrowy Kręgosłup
 
 ## /grafik
 
-- (na stronie) do uzupełnienia: grafik sali fitness (pilates, joga, zumba, step, aeroboxing, zdrowy kręgosłup, gimnastyka korekcyjna)
 - (w kodzie) potwierdzić, czy na trening wprowadzający trzeba się wcześniej zapisać i czy jest płatny
 - (w kodzie) godziny taekwondo, grapplingu i aikido, jeśli odbywają się poza grafikiem Fight Zone
 
@@ -86,7 +90,7 @@ Po uzupełnieniu treści usuń oznaczenie i uruchom `python3 _build.py`.
 ## /trenerzy
 
 - (na stronie) do uzupełnienia
-- (w kodzie) profile instruktorek fitness (w opiniach Google: Zuza, pilates; Wiktoria, fitness) oraz prowadzących MMA, jogę, zumbę, step, samoobronę
+- (w kodzie) profile instruktorek fitness (w opiniach Google: Zuza, pilates; Wiktoria, fitness) oraz prowadzących MMA, jogę, pilates, V3 Step Up!, V3 Mobility, Booty Project, Full Body Project, samoobronę
 
 ## /kontakt
 

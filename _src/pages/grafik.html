@@ -4,10 +4,10 @@
     <div class="page-hero__grid">
       <div>
         <h1 class="h1">Grafik zajęć <span class="neon neon--zaplon">V3 Klub</span></h1>
-        <p class="lead">Wszystkie zajęcia sali sportów walki Fight Zone na każdy dzień tygodnia. Grafik obowiązuje od {{grafik_od}}. Kliknij nazwę zajęć, żeby przeczytać o nich więcej.</p>
+        <p class="lead">Wszystkie zajęcia w V3 Klub na każdy dzień tygodnia: sala sportów walki Fight Zone i sala fitness. Kliknij nazwę zajęć, żeby przeczytać o nich więcej.</p>
         <div class="btn-rzad">
           <a class="btn btn--neon" href="{{tel_href}}">{{ikona phone}}Zapytaj o miejsce: {{tel}}</a>
-          <a class="btn btn--obrys" href="~/assets/img/grafik-fight-zone-plakat.webp" download>{{ikona download}}Pobierz plakat</a>
+          <a class="btn btn--obrys" href="#fitness">{{ikona calendar}}Grafik fitness</a>
         </div>
       </div>
     </div>
@@ -18,10 +18,11 @@
   <div class="wrap">
     <div class="sekcja__naglowek">
       <h2 class="h2" id="fz-grafik-h">Fight Zone: tydzień</h2>
-      <p>Dzisiejszy dzień jest podświetlony. Siłownia działa niezależnie od zajęć, w godzinach otwarcia klubu.</p>
+      <p>Obowiązuje od {{grafik_od}}. Dzisiejszy dzień jest podświetlony. Siłownia działa niezależnie od zajęć, w godzinach otwarcia klubu.</p>
     </div>
     {{legenda}}
     {{grafik_tydzien}}
+    <div class="btn-rzad mt-6"><a class="btn btn--obrys" href="{{plakat}}" download>{{ikona download}}Pobierz plakat Fight Zone</a></div>
   </div>
 </section>
 
@@ -43,29 +44,37 @@
 
 <section class="sekcja" id="fitness" aria-labelledby="fit-grafik-h">
   <div class="wrap">
+    <div class="sekcja__naglowek">
+      <h2 class="h2" id="fit-grafik-h">Fitness: tydzień</h2>
+      <p>Obowiązuje od {{grafik_od g="fitness"}}. Opisy zajęć są na stronie <a class="link" href="~/fitness-jaroslaw/#zajecia">fitness w Jarosławiu</a>.</p>
+    </div>
+    {{legenda g="fitness"}}
+    {{grafik_tydzien g="fitness"}}
+    <div class="btn-rzad mt-6"><a class="btn btn--obrys" href="{{plakat g="fitness"}}" download>{{ikona download}}Pobierz plakat fitness</a></div>
+  </div>
+</section>
+
+<section class="sekcja sekcja--podniesiona" aria-labelledby="godz-g-h">
+  <div class="wrap">
     <div class="split">
       <div class="prose">
-        <h2 class="h2" id="fit-grafik-h">Zajęcia fitness</h2>
-        <p class="mt-5"><span class="todo">do uzupełnienia: grafik sali fitness (pilates, joga, zumba, step, aeroboxing, zdrowy kręgosłup, gimnastyka korekcyjna)</span></p>
-        <p>Opisy zajęć są na stronie <a href="~/fitness-jaroslaw/">fitness w Jarosławiu</a>. Godziny potwierdzisz w recepcji: <a href="{{tel_href}}">{{tel}}</a>.</p>
+        <h2 class="h2" id="godz-g-h">Godziny otwarcia klubu</h2>
+        <p class="mt-5">Siłownia jest czynna przez cały czas otwarcia klubu, niezależnie od zajęć. Pytania o grupy i wolne miejsca: <a href="{{tel_href}}">{{tel}}</a>.</p>
         <!-- TODO: godziny taekwondo, grapplingu i aikido, jeśli odbywają się poza grafikiem Fight Zone -->
       </div>
-      <div>
-        <h3 class="h3">Godziny otwarcia klubu</h3>
-        <div class="mt-5">{{godziny}}</div>
-      </div>
+      <div>{{godziny}}</div>
     </div>
   </div>
 </section>
 
-<section class="sekcja sekcja--podniesiona" aria-labelledby="dalej-g-h">
+<section class="sekcja" aria-labelledby="dalej-g-h">
   <div class="wrap">
     <h2 class="h2" id="dalej-g-h">Zajęcia i ceny</h2>
     <nav class="powiazane powiazane--4 mt-6" aria-labelledby="dalej-g-h">
       <a href="~/kickboxing-jaroslaw/"><strong>Kickboxing</strong><span>Grupy wiekowe i Fight Team</span></a>
       <a href="~/boks-jaroslaw/"><strong>Boks</strong><span>Wtorek i czwartek 19:00</span></a>
       <a href="~/mma-jaroslaw/"><strong>MMA</strong><span>Piątek 20:00, sobota 12:00</span></a>
-      <a href="~/cennik/"><strong>Cennik</strong><span>Karnety na zajęcia i siłownię</span></a>
+      <a href="~/fitness-jaroslaw/"><strong>Fitness</strong><span>Pilates, joga, step, mobility</span></a>
     </nav>
   </div>
 </section>

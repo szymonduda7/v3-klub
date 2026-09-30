@@ -483,10 +483,14 @@ button { font: inherit; color: inherit; }
 .cechy { display: grid; gap: var(--s-5); }
 @media (min-width: 700px) { .cechy { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .cechy--3 { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1100px) { .cechy--4 { grid-template-columns: repeat(4, 1fr); } }
 .cecha { padding: var(--s-5); background: var(--grafit-2); border: 1px solid var(--linia); box-shadow: var(--cien-1); }
 .cecha .h3 { margin-bottom: var(--s-3); }
 .cecha p { color: var(--tekst-2); margin: 0; }
 .cecha p + p { margin-top: var(--s-3); }
+.cecha .cecha__terminy { display: flex; align-items: baseline; gap: 0.55rem; color: var(--tekst); font-weight: 600; font-variant-numeric: tabular-nums; }
+.cecha__terminy .tag { transform: translateY(-1px); }
+.termin { white-space: nowrap; }
 .cechy--media .cecha { display: flex; flex-direction: column; }
 .cechy--media .cecha:not(:has(.wideo)) { align-self: start; }
 .cecha__foto { margin: var(--s-5) calc(-1 * var(--s-5)) calc(-1 * var(--s-5)); border-top: 1px solid var(--linia); }
@@ -644,6 +648,15 @@ button { font: inherit; color: inherit; }
 [data-d="jujitsu"] { --kolor: #5aa9ff; }
 [data-d="samoobrona"] { --kolor: #c79bff; }
 [data-d="start"] { --kolor: #f5c542; }
+/* kategorie fitness (osobny widok, kolory mogą się powtarzać z Fight Zone) */
+[data-d="step-up"] { --kolor: #ff8a3d; }
+[data-d="pilates"] { --kolor: #ff5fa2; }
+[data-d="joga"] { --kolor: #7d94ff; }
+[data-d="mobility"] { --kolor: #f5c542; }
+[data-d="booty-project"] { --kolor: #c79bff; }
+[data-d="full-body"] { --kolor: #22e33b; }
+[data-d="zdrowe-cialo"] { --kolor: #2fd4c4; }
+[data-d="zdrowy-kregoslup"] { --kolor: #5aa9ff; }
 
 .grafik-dni { display: grid; gap: var(--s-4); }
 @media (min-width: 700px) { .grafik-dni { grid-template-columns: repeat(2, 1fr); } }
